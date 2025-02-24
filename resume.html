@@ -1,115 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yong Kheng Beh | Resume</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body class="resume">
-    <a href="yongkheng-resume.pdf" class="btn download-link">Dowload PDF</a>
-    <!-- //  INTRO  // -->
-    <header>
-      <div class="content-wrapper">
-        <h1>Yong Kheng Beh</h1>
-        <h2>Software Developer + Former Doctor</h2>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yong Kheng Beh | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="resume">
+  <a href="yongkheng-resume.pdf" class="btn download-link">Dowload PDF</a>
+  <!-- //  INTRO  // -->
+  <header>
+    <div class="content-wrapper">
+      <h1>Yong Kheng Beh</h1>
+      <h2>Software Developer + Former Doctor</h2>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- //  PROFILE  // -->
+    <section class="resume-section">
+      <h2>Profile</h2>
+      <p>A unique combination of computer science and medical expertise, with a strong passion for healthcare
+        technology. I specialize in AI-driven solutions, backend development, and software engineering, eager to apply
+        my knowledge to meaningful projects that bridge technology and healthcare.</p>
+      <a href="index.html">Back to homepage</a>
+    </section>
+
+    <!-- //  PROJECTS  // -->
+    <section class="resume-section">
+      <h2>Projects</h2>
+
+      <div class="project-wrapper">
+        <section class="project-item">
+          <img src="images/project-chatbot-500px.jpg" alt="SACommunity Chatbot">
+          <h3>SACommunity Chatbot Project</h3>
+          <p>Key Skills: Python, LangChain, Flask, Docker, Agile Software Development</p>
+          <p>Developed an AI-powered chatbot which uses Large Language Model and semantic search to enhance the search
+            functionality of a not-for-profit organization's database (15,000+ records). Utilized LangChain to implement
+            a Retrieval-Augmented Generation (RAG) chatbot, providing accurate and context-aware search results.</p>
+          <a class="btn" href="https://sacommunity.org/node/1202" target="_blank">Project Report</a>
+          <a class="btn" href="https://github.com/Kheng2023/SACommunityChatbot" target="_blank">GitHub Repository</a>
+        </section>
       </div>
-    </header>
 
-    <main class="content-wrapper">
-      <!-- //  PROFILE  // -->
-      <section class="resume-section">
-        <h2>Profile</h2>
-        <p>A unique combination of computer science and medical expertise, with a strong passion for healthcare technology. I specialize in AI-driven solutions, backend development, and software engineering, eager to apply my knowledge to meaningful projects that bridge technology and healthcare.</p>
-        <a href="index.html">Back to homepage</a>
-      </section>
+      <div class="project-wrapper">
+        <section class="project-item">
+          <img src="images/project-leetcode-500px.jpg" alt="LeetCode Diary">
+          <h3>LeetCode Diary</h3>
+          <p>Key Skills: Python, Algorithms, Data Structures, Object-Oriented Programming</p>
+          <p>A personal diary where I document my learning journey while solving LeetCode problems. This helps me
+            improve my coding skills, deepen my understanding of key concepts, and track my progress. The diary is
+            a work in progress, and I will continue adding content as I practice and learn more.</p>
+          <a class="btn" href="leetcode-diary/main.html" target="_blank">Explore LeetCode Diary</a>
+          <a class="btn" href="https://www.youtube.com/playlist?list=PLMZO6MTU0gffRlGMo_aY1Rpbb1u3suu-C"
+            target="_blank">Watch on YouTube</a>
+        </section>
+      </div>
 
-      <!-- //  PROJECTS  // -->
-      <section class="resume-section">
-        <h2>Projects</h2>
+    </section>
 
-        <div class="project-wrapper">
-          <section class="project-item">
-            <img src="images/project-chatbot-500px.jpg" alt="SACommunity Chatbot">
-            <h3>SACommunity Chatbot Project</h3>
-            <p>Developed an AI-powered chatbot which uses Large Language Model and semantic search to enhance the search functionality of a not-for-profit organization's database (15,000+ records). Utilized LangChain to implement a Retrieval-Augmented Generation (RAG) chatbot, providing accurate and context-aware search results.</p>
-            <a class="btn" href="https://sacommunity.org/node/1202" target="_blank">Project Report</a>
-            <a class="btn" href="https://github.com/Kheng2023/SACommunityChatbot" target="_blank">GitHub Repository</a>
-          </section>
+
+
+    <!-- //  WORK EXPERIENCE  // -->
+    <section class="resume-section">
+      <h2>Work Experience</h2>
+
+      <section class="work-item">
+        <div class="work-details">
+          <h3>Software Development Intern</h3>
+          <p>YourAnswer International Pty Ltd, Adelaide</p>
+          <p>July to October 2024</p>
+        </div>
+        <div class="work-summary">
+          <p>Developed an automated evaluation software to compare the semantic search performance of different
+            embedding models, chunking methods, and vector stores. Conducted extensive research and provided detailed
+            technical documentation to facilitate future improvements.</p>
+          <p>Key Skills: Python, Bash (Linux), AI/ML (Embeddings, Vector Search), Docker, OpenSearch</p>
+          <p>Key Achievements:</p>
+          <ul>
+            <li>Designed and implemented a Python-based automation tool to streamline semantic search evaluation.</li>
+            <li>Identified and resolved a logic error in the company’s main code that caused backward ranking in
+              semantic similarity, significantly improving search accuracy.</li>
+            <li>Conducted extensive experimentation and benchmarking with top-ranked embedding models from the MTEB
+              leaderboard on Hugging Face.</li>
+            <li>Evaluated and optimized semantic search performance across multiple vector stores, including OpenSearch.
+            </li>
+            <li>Compiled experiment results and authored detailed technical documentation to ensure effective knowledge
+              transfer.</li>
+          </ul>
         </div>
       </section>
 
-      <!-- //  WORK EXPERIENCE  // -->
-      <section class="resume-section">
-        <h2>Work Experience</h2>
-
-        <section class="work-item">
-          <div class="work-details">
-            <h3>Software Development Intern</h3>
-            <p>YourAnswer International Pty Ltd, Adelaide</p>
-            <p>July to October 2024</p>
-          </div>
-          <div class="work-summary">
-            <p>Developed an automated evaluation software to compare the semantic search performance of different embedding models, chunking methods, and vector stores. Conducted extensive research and provided detailed technical documentation to facilitate future improvements.</p>
-            <p>Key Achievements:</p>
-            <ul>
-              <li>Designed and implemented a Python-based automation tool to streamline semantic search evaluation.</li>
-              <li>Identified and resolved a logic error in the company’s main code that caused backward ranking in semantic similarity, significantly improving search accuracy.</li>
-              <li>Conducted extensive experimentation and benchmarking with top-ranked embedding models from the MTEB leaderboard on Hugging Face.</li>
-              <li>Evaluated and optimized semantic search performance across multiple vector stores, including OpenSearch.</li>
-              <li>Compiled experiment results and authored detailed technical documentation to ensure effective knowledge transfer.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="work-item">
-          <div class="work-details">
-            <h3>Industry Project Intern</h3>
-            <p>Connecting Up (Infoxchange), Adelaide</p>
-            <p>March to June 2024</p>
-          </div>
-          <div class="work-summary">
-            <p>Developed the backend for a full-stack AI-powered chatbot as part of a four-member team for SAcommunity, a not-for-profit organization.</p>
-            <p>Key Achievements:</p>
-            <ul>
-                <li>Led backend development, successfully integrating the LangChain library to enable LLM-based tool calls and semantic search, resulting in an Agentic RAG (Retrieval-Augmented Generation) chatbot capable of handling vague human queries with high accuracy.</li>
-                <li>Optimized chatbot performance by implementing advanced prompt engineering and retrieval strategies to improve response relevance.</li>
-                <li>Deployed the chatbot using Docker, resolving compatibility issues within an outdated software environment and ensuring smooth operation.</li>
-                <li>Collaborated with frontend developers and stakeholders to refine chatbot functionality based on real-world use cases.</li>
-            </ul>
-          </div>
-        </section>
-
+      <section class="work-item">
+        <div class="work-details">
+          <h3>Industry Project Intern</h3>
+          <p>Connecting Up (Infoxchange), Adelaide</p>
+          <p>March to June 2024</p>
+        </div>
+        <div class="work-summary">
+          <p>Developed the backend for a full-stack AI-powered chatbot as part of a four-member team for SAcommunity, a
+            not-for-profit organization.</p>
+          <p>Key Skills: Python, LangChain, Flask, Docker, Agile Software Development</p>
+          <p>Key Achievements:</p>
+          <ul>
+            <li>Led backend development, successfully integrating the LangChain library to enable LLM-based tool calls
+              and semantic search, resulting in an Agentic RAG (Retrieval-Augmented Generation) chatbot capable of
+              handling vague human queries with high accuracy.</li>
+            <li>Optimized chatbot performance by implementing advanced prompt engineering and retrieval strategies to
+              improve response relevance.</li>
+            <li>Deployed the chatbot using Docker, resolving compatibility issues within an outdated software
+              environment and ensuring smooth operation.</li>
+            <li>Collaborated with frontend developers and stakeholders to refine chatbot functionality based on
+              real-world use cases.</li>
+          </ul>
+        </div>
       </section>
 
-      <!-- //  EDUCATION & CERTIFICATIONS  // -->
-      <section class="resume-section">
-        <h2>Education</h2>
+    </section>
 
-        <section class="education-item">
-          <h3>Master of Computing and Innovation</h3>
-          <p>University of Adelaide, Australia, 2023 - 2024</p>
-          <p>GPA: 6.83/7 | Courses completed: Computer Networks & Applications, Introduction to Statistical Machine Learning, Computer Systems, Operating Systems, Algorithm and Data Structure Algorithm Analysis, Software Engineering and Project, Project Management Fundamentals</p>
-        </section>
+    <!-- //  EDUCATION & CERTIFICATIONS  // -->
+    <section class="resume-section">
+      <h2>Education</h2>
 
-        <section class="education-item">
-          <h3>Bachelor of Medicine, Bachelor of Surgery (MBBS)</h3>
-          <p>University of Malaya, Malaysia, 2009 - 2014</p>
-        </section>
-
+      <section class="education-item">
+        <h3>Master of Computing and Innovation</h3>
+        <p>University of Adelaide, Australia, 2023 - 2024</p>
+        <p>GPA: 6.83/7 | Courses completed: Computer Networks & Applications, Introduction to Statistical Machine
+          Learning, Computer Systems, Operating Systems, Algorithm and Data Structure Algorithm Analysis, Software
+          Engineering and Project, Project Management Fundamentals</p>
       </section>
-    </main>
 
-    <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
-    <footer>
-      <p>© 2025 by Yong Kheng Beh | <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a></p>
-      <ul class="socials">
-        <li><a href="www.linkedin.com/in/yong-kheng-beh" target="_blank"><img src="images/icon-logo-linkedin.png" alt=""></a></li>
-        <li><a href="https://github.com/Kheng2023" target="_blank"><img src="images/icon-logo-github.png" alt=""></a></li>
-      </ul>
-    </footer>
-  </body>
+      <section class="education-item">
+        <h3>Bachelor of Medicine, Bachelor of Surgery (MBBS)</h3>
+        <p>University of Malaya, Malaysia, 2009 - 2014</p>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
+  <footer>
+    <p>© 2025 by Yong Kheng Beh | <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a></p>
+    <ul class="socials">
+      <li><a href="www.linkedin.com/in/yong-kheng-beh" target="_blank"><img src="images/icon-logo-linkedin.png"
+            alt=""></a></li>
+      <li><a href="https://github.com/Kheng2023" target="_blank"><img src="images/icon-logo-github.png" alt=""></a></li>
+    </ul>
+  </footer>
+</body>
+
 </html>

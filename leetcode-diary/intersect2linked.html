@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intersection of Two Linked Lists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Intersection of Two Linked Lists</h1>
+        <p>Looking at the discussion post, the most upvoted comment clearly hinted at the solution, but what did it
+            mean?</p>
+        <div class="quote">
+            "If I wander to the end of the world and still cannot find you, I will take another path and search
+            anew."<br>
+            "And I shall do the same, my love." – dinguming102
+        </div>
+        <h2>My Thoughts</h2>
+        <ul>
+            <li>What if they missed each other?</li>
+            <li>What if they only meet at the next node after the intersection?</li>
+        </ul>
+        <p>I will explain why they eventually meet, using two pointers.</p>
+        <h2>Understanding the Concept</h2>
+        <p>Imagine two linked lists of different lengths having an intersection, e.g.:</p>
+        <div class="code">
+            A: [3, 6, 3, 7, 1, 4, 2, 5, 10]
+            B: [2, 5, 10]
+        </div>
+        <p>If we concatenate A + B and B + A, their lengths become the same:</p>
+        <div class="code">
+            A + B: [3, 6, 3, 7, 1, 4, 2, 5, 10, 2, 5, 10]
+            B + A: [2, 5, 10, 3, 6, 3, 7, 1, 4, 2, 5, 10]
+        </div>
+        <p>Since we move both pointers one step at a time from position 0, 1, 2, etc., no node is skipped. Thus, the
+            pointer starting from A and the pointer starting from B will eventually intersect.</p>
+        <p><strong>Smart move!</strong> Learning all these helps me get more creative. Until next time!</p>
+    </div>
+</body>
+
+</html>
