@@ -14,10 +14,14 @@
 <body>
     <div class="container">
         <h1>Trim a Binary Search Tree</h1>
-        <p>Looking at the hints, it seemed like an easy task, but the more lines I wrote, the more confused I became. I
-            tried adding more conditions with more lines of code.</p>
-        <p>I’m writing this to remind myself if I forget and also to clarify what is going on in my mind.</p>
-        <p>I was so confused with the super short, around 9 lines of code—crazy! While I wrote almost 30 lines. I
+        <p>Posted on: 2025-01-24</p>
+        <p>Today, I was stucked at this coding challenge: given a Binary Search Tree, a low and a high value, remove all
+            nodes which is not withing the range from low to high.</p>
+        <p>Looking at the hints, it seemed like an easy task, but the more lines of code I wrote, the more confused I
+            became. I tried adding more conditions with more lines of code just to resolve the failed test but it will
+            fail the next one or the earlier ones until i have to give up and look at the solution.</p>
+        <p>I’m writing this as a record for my future self and also to clarify what is going on in my mind.</p>
+        <p>The answer was just 9 lines of code! Crazy! While I wrote almost 30 lines and still unable to solve this. I
             noticed recursion is very useful in many cases, but I always hesitated to use it because I wasn’t able to
             understand it. So, I took some time to break down the code slowly with an example.</p>
         <p>I recorded a video to explain it step by step:</p>
@@ -32,9 +36,9 @@
         <ol>
             <li>A binary search tree is built such that all numbers on the left are smaller, and all numbers on the
                 right are larger.</li>
-            <li>Given a range, e.g., low = 7 and high = 10, we need to trim all numbers that are out of this boundary.
-                This means we only retain numbers between 7 and 10, removing anything smaller than 7 or larger than 10.
-            </li>
+            <li>For this challenge, given a range, e.g., low = 7 and high = 10, we need to trim all numbers that are out
+                of this boundary. This means we only retain numbers between 7 and 10, removing anything smaller than 7
+                or larger than 10.</li>
             <li>The smart move is passing the left or right branch recursively into the function.</li>
             <li>If the root is smaller than the lower bound, then the answer lies somewhere in the right branch, so we
                 pass the right branch as the new root:</li>
@@ -42,10 +46,9 @@
                 <pre><code>if root.val < low: 
     return self.trimBST(root.right, low, high)</code></pre>
             </div>
-            <li>This trims the left branch, but it still exists in memory. The root pointer now points at the
-                right branch.</li>
-            <li>Similarly, if the root is larger than the upper bound, move the root pointer to the left node:
-            </li>
+            <li>This "trims" the left branch by just moving the root pointer. All the nodes in the left branch still
+                exists in memory. Just that the root pointer now points at the right branch.</li>
+            <li>Similarly, if the root is larger than the upper bound, move the root pointer to the left node:</li>
             <div class="code">
                 <pre><code>if root.val > high:
     return self.trimBST(root.left, low, high)</code></pre>
@@ -72,7 +75,7 @@ return root</code></pre>
         return root</code></pre>
             </div>
         </ol>
-        <p>Hope this explanation helps! Read line by line for each root position and repeat. Watch the video for more
+        <p>Hope this explanation helps! And hope in the future . Watch the video for more
             details. See you in the next post!</p>
     </div>
 </body>
