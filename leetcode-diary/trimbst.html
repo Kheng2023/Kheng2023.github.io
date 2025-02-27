@@ -25,13 +25,11 @@
             noticed recursion is very useful in many cases, but I always hesitated to use it because I wasn’t able to
             understand it. So, I took some time to break down the code slowly with an example.</p>
         <p>I recorded a video to explain it step by step:</p>
-        <p>
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/GfcWoj2jRd0"
                 title="YouTube video player" frameborder="0" allowfullscreen>
             </iframe>
         </div>
-        </p>
         <h2>Understanding the Concept</h2>
         <ol>
             <li>A binary search tree is built such that all numbers on the left are smaller, and all numbers on the
@@ -65,7 +63,7 @@ return root</code></pre>
                 <pre><code>class Solution:
     def trimBST(self, root: TreeNode, low: int, high: int) -> TreeNode:
         if not root:
-        return None
+            return None
         if root.val < low: 
             return self.trimBST(root.right, low, high) 
         if root.val> high:

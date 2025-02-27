@@ -16,14 +16,18 @@ Edward: #9cb4ac
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%;
+    /* 1rem = 10px */
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -35,7 +39,9 @@ body {
     line-height: 1.4;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: "Courgette", serif;
     font-weight: 400;
     margin: 0;
@@ -58,16 +64,20 @@ h3 {
 a {
     color: #51624f;
 }
+
 a:hover {
     color: #afbea2;
     text-decoration: none;
 }
+
 footer a {
     color: #afbea2;
 }
+
 footer a:hover {
     color: #51624f;
 }
+
 .btn {
     background: #51624f;
     color: #f6f6f6;
@@ -75,7 +85,7 @@ footer a:hover {
     text-transform: uppercase;
     font-size: 1.2rem;
     display: inline-block;
-    padding:7px;
+    padding: 7px;
     letter-spacing: 0.1em;
     line-height: 1;
     border-radius: 4px;
@@ -95,6 +105,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
 }
+
 .home .content-wrapper {
     flex: 1 0 auto;
 }
@@ -108,10 +119,12 @@ footer a:hover {
     .home .content-wrapper {
         padding: 10px;
     }
+
     .content-bg {
         padding: 20px;
     }
 }
+
 /* RESUME
 -------------------------------------------*/
 .resume header::before {
@@ -121,9 +134,11 @@ footer a:hover {
     display: block;
     height: 300px;
 }
+
 .resume-section {
     margin-bottom: 50px;
 }
+
 .resume-section h2 {
     border-bottom: 2px dashed #afbea2;
 }
@@ -134,22 +149,27 @@ footer a:hover {
     left: 5px;
     font-size: 1.5rem;
 }
+
 @media screen and (max-width: 1200px) {
     .download-link {
-        position:absolute
+        position: absolute
     }
 }
+
 @media screen and (max-width: 500px) {
     .resume header::before {
         height: 200px;
     }
+
     h1 {
         font-size: 4.2rem;
     }
+
     h2 {
         font-size: 2.5rem;
     }
 }
+
 /* Projects
 -------------------------------------------*/
 .project-item {
@@ -164,6 +184,7 @@ footer a:hover {
     .project-item img {
         display: flow-root;
     }
+
     .project-item img {
         float: left;
         margin-right: 20px;
@@ -176,6 +197,7 @@ footer a:hover {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 20px;
     }
+
     .project-item img {
         width: 100%;
     }
@@ -204,9 +226,10 @@ footer a:hover {
         grid-template-columns: 300px 1fr;
         column-gap: 20px;
     }
+
     .work-summary p:first-child {
         margin-top: 0;
-    }    
+    }
 }
 
 /* Education
@@ -214,6 +237,7 @@ footer a:hover {
 .education-item {
     margin: 30px 0;
 }
+
 .education-item p {
     margin: 0;
 }
@@ -224,14 +248,17 @@ footer {
     background-color: #231412;
     color: #9cb4ac;
 }
+
 .socials {
     list-style-type: none;
     padding: 0;
 }
+
 .socials li {
     display: inline-block;
     margin-left: 10px;
 }
+
 .socials img {
     width: 32px;
 }
@@ -245,8 +272,9 @@ footer {
         display: flex;
         justify-content: space-between;
         padding: 0 20px;
-    }  
+    }
 }
+
 @media screen and (max-width: 859px) {
     footer {
         text-align: center;
