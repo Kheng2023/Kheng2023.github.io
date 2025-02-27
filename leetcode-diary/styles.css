@@ -72,6 +72,25 @@ a:hover {
     text-decoration: none;
 }
 
+.btn {
+    background: #51624f;
+    color: #f6f6f6;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 7px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
 /* CONTAINER */
 
 .container {
