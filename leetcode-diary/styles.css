@@ -1,15 +1,10 @@
 /* COLOUR PALETTE */
 
 :root {
-    --finlandia: #51624f;
-    --hampton: #e6d5a9;
-    --norway: #afbea2;
-    --edward: #9cb4ac;
-    --spearmint: #b6e2d3;
-    --text-color: #333;
-    --secondary-text: #555;
-    --highlight: #eef;
-    --quote-border: #ccc;
+    --mischka: #dadade;
+    --english-walnut: #442e26;
+    --old-copper: #7e5233;
+    --muddy-waters: #b98753;
 }
 
 /* GLOBAL STYLES */
@@ -32,7 +27,7 @@ body {
 }
 
 body {
-    background-color: var(--spearmint);
+    background-color: var(--muddy-waters);
     margin: 0;
     font-family: "Rubik", serif;
     font-size: 1.5rem;
@@ -45,7 +40,7 @@ h3 {
     font-family: "Courgette", serif;
     font-weight: 400;
     margin: 0;
-    color: var(--text-color);
+    color: var(--english-walnut);
 }
 
 h1 {
@@ -64,16 +59,16 @@ h3 {
 /* LINKS */
 
 a {
-    color: var(--finlandia);
+    color: var(--old-copper);
 }
 
 a:hover {
-    color: var(--norway);
+    color: var(--muddy-waters);
     text-decoration: none;
 }
 
 .btn {
-    background: #51624f;
+    background-color: var(--old-copper);
     color: #f6f6f6;
     text-decoration: none;
     text-transform: uppercase;
@@ -96,7 +91,7 @@ a:hover {
 .container {
     max-width: 800px;
     margin: 20px auto;
-    background: white;
+    background: #f9f1f0;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -115,16 +110,16 @@ ul {
 
 .quote {
     font-style: italic;
-    color: var(--text-color);
+    color: var(--old-copper);
     padding: 10px;
-    border-left: 4px solid var(--quote-border);
+    border-left: 4px solid var(--mischka);
     margin: 10px 0;
 }
 
 /* CODE SECTION */
 
 pre {
-    background-color: var(--highlight);
+    background-color: var(--mischka);
     padding: 10px;
     border-radius: 5px;
     font-family: monospace;
