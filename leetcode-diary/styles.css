@@ -1,10 +1,10 @@
 /* COLOUR PALETTE */
 
 :root {
-    --mischka: #dadade;
-    --english-walnut: #442e26;
-    --old-copper: #7e5233;
-    --muddy-waters: #b98753;
+    --baby-blue: #b1d4e0;
+    --misty-blue: #afc1d0;
+    --navy-blue: #1c3f60;
+    --black: #0b1320;
 }
 
 /* GLOBAL STYLES */
@@ -27,7 +27,7 @@ body {
 }
 
 body {
-    background-color: var(--muddy-waters);
+    background-color: var(--navy-blue);
     margin: 0;
     font-family: "Rubik", serif;
     font-size: 1.5rem;
@@ -40,7 +40,7 @@ h3 {
     font-family: "Courgette", serif;
     font-weight: 400;
     margin: 0;
-    color: var(--english-walnut);
+    color: var(--black);
 }
 
 h1 {
@@ -59,7 +59,7 @@ h3 {
 /* LINKS */
 
 a {
-    color: var(--old-copper);
+    color: var(--black);
 }
 
 a:hover {
@@ -68,7 +68,7 @@ a:hover {
 }
 
 .btn {
-    background-color: var(--old-copper);
+    background-color: var(--navy-blue);
     color: #f6f6f6;
     text-decoration: none;
     text-transform: uppercase;
@@ -91,7 +91,7 @@ a:hover {
 .container {
     max-width: 800px;
     margin: 20px auto;
-    background: #f9f1f0;
+    background: var(--baby-blue);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -99,7 +99,7 @@ a:hover {
 
 p {
     line-height: 1.6;
-    color: var(--secondary-text);
+    color: var(--black);
 }
 
 ul {
@@ -110,16 +110,16 @@ ul {
 
 .quote {
     font-style: italic;
-    color: var(--old-copper);
+    color: var(--navy-blue);
     padding: 10px;
-    border-left: 4px solid var(--mischka);
+    border-left: 4px solid var(--misty-blue);
     margin: 10px 0;
 }
 
 /* CODE SECTION */
 
 pre {
-    background-color: var(--mischka);
+    background-color: var(--misty-blue);
     padding: 10px;
     border-radius: 5px;
     font-family: monospace;
