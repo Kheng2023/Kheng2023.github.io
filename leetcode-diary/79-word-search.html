@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79. Word Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>79. Word Search</h1>
+        <p>Posted on: 2025-02-27</p>
+        <p>Solving another interesting question today: Word Search. The hint suggested using Depth-First Search (DFS),
+            but I couldn’t solve it that way. This is a problem I will definitely revisit in the future to see if I can
+            figure it out.</p>
+
+        <p>I've actually come across this problem many times before, but every time I saw it, I got stuck for days and
+            couldn't move forward. Eventually, I would give up on LeetCode altogether. Today, I finally accepted that
+            it’s okay to look at solutions and learn from them.</p>
+
+        <h2>Challenges I Faced</h2>
+        <ul>
+            <li>I tend to avoid writing too many conditions in my code.</li>
+            <li>I was too fixated on using DFS in a strict way and struggled to modify it to fit the problem.</li>
+        </ul>
+
+        <p>Looking at the solutions, I noticed a pattern: they rely on multiple conditions using "or" statements:</p>
+
+        <div class="code">
+            <pre><code>if row < 0 or row >= len(board) or column < 0 or column >= len(board[0]) or board[row][column] != word[index]:
+    return False</code></pre>
+        </div>
+
+        <p>This checks if the current position is out of bounds or if the character does not match.</p>
+
+        <p>Another key part of the solution is the recursive DFS call in four directions:</p>
+
+        <div class="code">
+            <pre><code>if dfs(row+1, column, index+1) or dfs(row-1, column, index+1) or 
+   dfs(row, column+1, index+1) or dfs(row, column-1, index+1):
+    return True</code></pre>
+        </div>
+
+        <p>This explores all possible paths until the word is found.</p>
+
+        <h2>Lessons Learned</h2>
+        <ol>
+            <li>Don't hesitate to write long conditions if they are necessary for the logic.</li>
+            <li>It's okay to modify DFS logic instead of following it strictly.</li>
+            <li>Understanding base cases and recursion flow is crucial in problems like this.</li>
+        </ol>
+
+        <h2>Solution Breakdown</h2>
+        <ol>
+            <li>Check if we have reached the end of the word. If so, return <code>True</code>.</li>
+            <li>Verify if the current character matches the word and is still within bounds.</li>
+            <li>If the it is out of bound or character does not match, return <code>False</code>. Otherwise, proceed.
+            </li>
+            <li>Mark the cell as visited by replacing it with an empty string.</li>
+            <li>Recursively search in all four directions.</li>
+            <li>If result is <code>True</code>, return <code>True</code>.</li>
+            <li>Else, if the word is not found, restore the character.</li>
+            <li>Start the search from each row and column.</li>
+        </ol>
+
+        <h2>Full Code:</h2>
+        <div class="code">
+            <pre><code>class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        # row and column is the position in the board, index is the index of the word
+        def dfs(row, column, index):
+            if index == len(word):  # If the index equals the length of the word, return True
+                return True  # Word has been found
+
+            # If out of bounds or character does not match
+            if row < 0 or row >= len(board) or column < 0 or column >= len(board[0]) or board[row][column] != word[index]:
+                return False
+
+            temp = board[row][column]
+            board[row][column] = ''  # Mark as visited
+
+            # Check all 4 directions
+            if (dfs(row+1, column, index+1) or dfs(row-1, column, index+1) or 
+                dfs(row, column+1, index+1) or dfs(row, column-1, index+1)):
+                return True
+
+            board[row][column] = temp  # Restore character
+            return False
+
+        for row in range(len(board)):
+            for column in range(len(board[0])):
+                if dfs(row, column, 0):
+                    return True
+
+        return False</code></pre>
+        </div>
+
+        <p>That’s all for today! I’ll keep practicing and refining my approach to DFS. Hopefully, in the future, I’ll be
+            able to solve this problem on my own without looking at solutions.</p>
+
+        <div class="btn-container">
+            <a class="btn" href="reorganising_thoughts.html">Previous</a>
+            <a class="btn" href="main.html">Next</a>
+        </div>
+        <br>
+        <a href="main.html">Back to Leetcode Diary</a>
+        <br>
+        <a href="../index.html">Back to homepage</a>
+    </div>
+</body>
+
+</html>
