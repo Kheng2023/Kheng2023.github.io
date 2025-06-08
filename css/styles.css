@@ -15,269 +15,450 @@ Edward: #9cb4ac
 */
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    /* 1rem = 10px */
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background-color: #f6f6f6;
-    margin: 0;
-    font-family: "Rubik", serif;
-    font-size: 1.5rem;
-    line-height: 1.4;
+  background-color: #f6f6f6;
+  margin: 0;
+  font-family: "Rubik", serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
 }
 
 h1,
 h2,
 h3 {
-    font-family: "Courgette", serif;
-    font-weight: 400;
-    margin: 0;
+  font-family: "Courgette", serif;
+  font-weight: 400;
+  margin: 0;
 }
 
 h1 {
-    font-size: 5rem;
-    line-height: 1;
+  font-size: 5rem;
+  line-height: 1;
 }
 
 h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 h3 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 /* links */
 a {
-    color: #51624f;
+  color: #51624f;
 }
 
 a:hover {
-    color: #afbea2;
-    text-decoration: none;
+  color: #afbea2;
+  text-decoration: none;
 }
 
 footer a {
-    color: #afbea2;
+  color: #afbea2;
 }
 
 footer a:hover {
-    color: #51624f;
+  color: #51624f;
 }
 
 .btn {
-    background: #51624f;
-    color: #f6f6f6;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    display: inline-block;
-    padding: 7px;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    border-radius: 4px;
+  background: #51624f;
+  color: #f6f6f6;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 7px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  border-radius: 4px;
 }
 
 .content-wrapper {
-    margin: 0 auto;
-    padding: 30px;
-    max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 900px;
 }
 
 /* HOME
 -------------------------------------------*/
 .home {
-    background: url('../images/bg-penang-hill.jpg') no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+  background: url("../images/bg-penang-hill.jpg") no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .home .content-wrapper {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .content-bg {
-    background: rgb(255 255 255 / 0.9);
-    padding: 30px;
+  background: rgb(255 255 255 / 0.9);
+  padding: 30px;
 }
 
 @media screen and (max-width: 650px) {
-    .home .content-wrapper {
-        padding: 10px;
-    }
+  .home .content-wrapper {
+    padding: 10px;
+  }
 
-    .content-bg {
-        padding: 20px;
-    }
+  .content-bg {
+    padding: 20px;
+  }
 }
 
 /* RESUME
 -------------------------------------------*/
 .resume header::before {
-    background: url('../images/bg-home-office-bookshelf.jpg');
-    background-size: cover;
-    content: "";
-    display: block;
-    height: 300px;
+  background: url("../images/bg-home-office-bookshelf.jpg");
+  background-size: cover;
+  content: "";
+  display: block;
+  height: 300px;
 }
 
 .resume-section {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .resume-section h2 {
-    border-bottom: 2px dashed #afbea2;
+  border-bottom: 2px dashed #afbea2;
 }
 
 .download-link {
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    font-size: 1.5rem;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 1200px) {
-    .download-link {
-        position: absolute
-    }
+  .download-link {
+    position: absolute;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .resume header::before {
-        height: 200px;
-    }
+  .resume header::before {
+    height: 200px;
+  }
 
-    h1 {
-        font-size: 4.2rem;
-    }
+  h1 {
+    font-size: 4.2rem;
+  }
 
-    h2 {
-        font-size: 2.5rem;
-    }
+  h2 {
+    font-size: 2.5rem;
+  }
 }
 
 /* Projects
 -------------------------------------------*/
 .project-item {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 
 .project-item img {
-    width: 300px;
+  width: 300px;
 }
 
-@media screen and (min-width:860px) {
-    .project-item img {
-        display: flow-root;
-    }
+@media screen and (min-width: 860px) {
+  .project-item img {
+    display: flow-root;
+  }
 
-    .project-item img {
-        float: left;
-        margin-right: 20px;
-    }
+  .project-item img {
+    float: left;
+    margin-right: 20px;
+  }
 }
 
-@media screen and (min-width:650px) and (max-width:859px) {
-    .project-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 20px;
-    }
+@media screen and (min-width: 650px) and (max-width: 859px) {
+  .project-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
 
-    .project-item img {
-        width: 100%;
-    }
+  .project-item img {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width:500px) {
-    .project-item img {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+@media screen and (max-width: 500px) {
+  .project-item img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 /* Work Experience
 -------------------------------------------*/
 .work-item {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 
 .work-details p {
-    margin: 0;
+  margin: 0;
 }
 
-@media screen and (min-width:860px) {
-    .work-item {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        column-gap: 20px;
-    }
+@media screen and (min-width: 860px) {
+  .work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+  }
 
-    .work-summary p:first-child {
-        margin-top: 0;
-    }
+  .work-summary p:first-child {
+    margin-top: 0;
+  }
 }
 
 /* Education
 -------------------------------------------*/
 .education-item {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 
 .education-item p {
-    margin: 0;
+  margin: 0;
 }
 
 /* FOOTER
 -------------------------------------------*/
 footer {
-    background-color: #231412;
-    color: #9cb4ac;
+  background-color: #231412;
+  color: #9cb4ac;
 }
 
 .socials {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .socials li {
-    display: inline-block;
-    margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .socials img {
-    width: 32px;
+  width: 32px;
 }
 
 .socials img:hover {
-    opacity: 50%;
+  opacity: 50%;
 }
 
-@media screen and (min-width: 860px) {
-    footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-    }
+/* NATURE/GREEN THEME FOR HOMEPAGE AND RESUME */
+body.home,
+body.resume {
+  background: #e6f4ea;
+  /* was: linear-gradient(135deg, #e6f4ea 0%, #b7e4c7 100%); */
+  min-height: 100vh;
+  font-family: "Rubik", Arial, sans-serif;
 }
 
-@media screen and (max-width: 859px) {
-    footer {
-        text-align: center;
-        padding: 10px;
-    }
+.hero {
+  background: #b7e4c7;
+  /* was: linear-gradient(90deg, #b7e4c7 0%, #81c784 100%); */
+  padding: 3em 0 2em 0;
+  text-align: center;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 24px rgba(81, 98, 79, 0.1);
+  margin-bottom: 2em;
+  z-index: 1;
+  position: relative;
+}
+
+.hero::after {
+  content: "🌿";
+  position: absolute;
+  right: 2.5em;
+  bottom: 0.5em;
+  font-size: 3.5rem;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.hero img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #b7e4c7;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.1);
+}
+
+.hero h1 {
+  font-family: "Courgette", cursive;
+  font-size: 3.2rem;
+  color: #355c3a;
+  margin-bottom: 0.2em;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  color: #5b7d5b;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+main {
+  z-index: 2;
+  position: relative;
+}
+
+/* Fix overlap: add margin-top to .section-cards if needed */
+.section-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin-bottom: 2.5em;
+  margin-top: 2em;
+  /* ensures cards don't overlap hero */
+}
+
+.card {
+  background: #e6f4ea;
+  /* was: linear-gradient(120deg, #e6f4ea 60%, #b7e4c7 100%); */
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(81, 98, 79, 0.08);
+  padding: 2em 2em 1.5em 2em;
+  max-width: 340px;
+  min-width: 260px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.13s, box-shadow 0.13s;
+  border: 1.5px solid #b7e4c7;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
+}
+
+.card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7em;
+  color: #81c784;
+}
+
+.card::before {
+  content: "🌱";
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 1.5em;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.card h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 2.1rem;
+  /* was 1.7rem */
+  color: #355c3a;
+  font-family: "Courgette", cursive;
+}
+
+.card p {
+  color: #355c3a;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  /* was 1.25rem */
+}
+
+.card a {
+  color: #388e3c;
+  border-bottom: 1.5px solid #81c784;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+  font-size: 1.35rem;
+  /* was 1.18rem */
+}
+
+footer {
+  background: #e6f4ea;
+  /* was: linear-gradient(90deg, #e6f4ea 60%, #b7e4c7 100%); */
+  color: #355c3a;
+  border-radius: 24px 24px 0 0;
+  padding: 1.5em 0 1em 0;
+  text-align: center;
+  margin-top: 3em;
+  font-size: 1.5rem;
+}
+
+footer a {
+  color: #388e3c;
+}
+
+footer a:hover {
+  color: #1b5e20;
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.socials li {
+  display: inline-block;
+}
+
+.socials img {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(0.1) brightness(0.95) sepia(0.2) hue-rotate(60deg)
+    saturate(1.2);
+  transition: filter 0.15s, transform 0.13s;
+}
+
+.socials img:hover {
+  filter: grayscale(0) brightness(1.1) hue-rotate(60deg) saturate(1.4);
+  transform: scale(1.08);
+}
+
+/* Optional: Subtle leafy pattern overlay for extra nature feel */
+body.home::before,
+body.resume::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  z-index: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/leaf.png");
+  background-repeat: repeat;
+  background-size: 220px 220px;
 }
