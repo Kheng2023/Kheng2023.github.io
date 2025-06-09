@@ -11,8 +11,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
-
   <body>
     <header>
       <h1>Trim a Binary Search Tree</h1>
@@ -75,10 +78,8 @@
           somewhere in the right branch, so we pass the right branch as the new
           root:
         </li>
-        <div class="code">
-          <pre><code>if root.val < low: 
+        <pre><code class="language-python">if root.val < low: 
     return self.trimBST(root.right, low, high)</code></pre>
-        </div>
         <li>
           This "trims" the left branch by just moving the root pointer. All the
           nodes in the left branch still exists in memory. Just that the root
@@ -88,22 +89,17 @@
           Similarly, if the root is larger than the upper bound, move the root
           pointer to the left node:
         </li>
-        <div class="code">
-          <pre><code>if root.val > high:
+        <pre><code class="language-python">if root.val > high:
     return self.trimBST(root.left, low, high)</code></pre>
-        </div>
         <li>
           Finally, when the root is within the range, it proceeds to trim left
           and right branches recursively and return the root:
         </li>
-        <div class="code">
-          <pre><code>root.left = self.trimBST(root.left, low, high)
+        <pre><code class="language-python">root.left = self.trimBST(root.left, low, high)
 root.right = self.trimBST(root.right, low, high)
 return root</code></pre>
-        </div>
         <li>The full code:</li>
-        <div class="code">
-          <pre><code>class Solution:
+        <pre><code class="language-python">class Solution:
     def trimBST(self, root: TreeNode, low: int, high: int) -> TreeNode:
         if not root:
             return None
@@ -114,7 +110,6 @@ return root</code></pre>
         root.left = self.trimBST(root.left, low, high)
         root.right = self.trimBST(root.right, low, high)
         return root</code></pre>
-        </div>
       </ol>
       <p>
         Hope this explanation helps! And hope in the future . Watch the video
@@ -148,5 +143,7 @@ return root</code></pre>
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

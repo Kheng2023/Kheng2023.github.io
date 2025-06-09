@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
 
   <body>
@@ -40,8 +44,7 @@
         overcomplicated things:
       </p>
 
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         if not p and not q: # both None
             return True
@@ -53,7 +56,6 @@
             return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
         
         return False</code></pre>
-      </div>
 
       <h3>Breaking It Down</h3>
       <ul>
@@ -77,8 +79,7 @@
         are identical, we check whether a tree is symmetrical.
       </p>
 
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def isMirror(self, left, right):
         if not left and not right:
             return True
@@ -93,7 +94,6 @@
         
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         return self.isMirror(root.left, root.right)</code></pre>
-      </div>
 
       <p>
         Notice the similarities? The only difference is how we pass the next
@@ -106,8 +106,7 @@
         need to check if one tree is a subtree of another.
       </p>
 
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def isSameTree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not root and not subRoot:
             return True
@@ -125,7 +124,6 @@
         if self.isSameTree(root, subRoot):
             return True
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)</code></pre>
-      </div>
 
       <p>
         Here, we reuse the <code>isSameTree</code> method and apply it to check
@@ -173,5 +171,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

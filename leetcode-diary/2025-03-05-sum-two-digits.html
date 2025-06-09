@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
   <body>
     <header>
@@ -95,8 +99,7 @@
       </p>
 
       <h2>Final Solution</h2>
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def getSum(self, a: int, b: int) -> int:
         # Perform addition using XOR and recursively shift the carry
         mask = 0b111111111111  # 12-bit mask (sufficient for range -1000 to 1000)
@@ -106,7 +109,6 @@
             return a if a <= MAX else ~(a ^ mask)
 
         return self.getSum((a ^ b) & mask, ((a & b) << 1) & mask)</code></pre>
-      </div>
 
       <h2>Final Thoughts</h2>
       <p>
@@ -146,5 +148,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

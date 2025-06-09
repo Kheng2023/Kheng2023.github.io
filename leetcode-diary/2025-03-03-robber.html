@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
   <body>
     <header>
@@ -72,8 +76,7 @@
         possible amount that can be robbed.
       </p>
 
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def rob(self, nums: List[int]) -> int:
         if not nums:
             return 0
@@ -85,7 +88,6 @@
             prev2 = temp
 
         return prev1</code></pre>
-      </div>
 
       <h2>Breaking Down the Code</h2>
       <p>In each iteration:</p>
@@ -161,5 +163,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

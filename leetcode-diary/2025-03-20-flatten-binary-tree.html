@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
   <body>
     <header>
@@ -48,8 +52,7 @@
       </ol>
 
       <h2>My Recursive Solution</h2>
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
         Do not return anything, modify root in-place instead.
@@ -67,7 +70,6 @@
             current.right = temp  # Append the original right subtree
 
         self.flatten(root.right)</code></pre>
-      </div>
 
       <h2>Space Complexity Issue</h2>
       <p>
@@ -85,8 +87,7 @@
         the left subtree to the right and continues traversing.
       </p>
 
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
         Do not return anything, modify root in-place instead.
@@ -107,7 +108,6 @@
 
             # Move to the next node on the right
             current = current.right</code></pre>
-      </div>
 
       <h2>Final Thoughts</h2>
       <p>I explained this problem in more detail in my YouTube video:</p>
@@ -156,5 +156,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

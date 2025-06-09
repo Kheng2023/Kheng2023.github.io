@@ -11,113 +11,97 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
 
   <body>
     <header>
-      <h1>371. Sum of Two Integers</h1>
-      <p>Posted on: 5/March/2025</p>
+      <h1>Reorganising Thoughts</h1>
+      <p>Posted on: 17/March/2025</p>
     </header>
     <main>
       <p>
-        Today's LeetCode question was an interesting one—perform addition
-        <strong>without using the + or - operator.</strong>
+        Hi everyone, it's been some time since I updated this website. I've been
+        busy with casual work and reorganizing how I approach LeetCode problems.
+        I realized that my current approach wasn't yielding much progress, so I
+        decided to change it. Everyone has their own learning style, and I found
+        that some of the intense guidelines out there just weren’t my style—they
+        stressed me out.
       </p>
 
       <p>
-        At first, I was completely stunned. What kind of question is this? And
-        worse, what if this comes up in an interview? I had a gut feeling it had
-        something to do with <strong>bit manipulation</strong>, and sure enough,
-        that was the topic tagged in the problem. But I had no clue where to
-        start—I had completely forgotten how adders work in Computer Systems.
+        I've been reading <em>Feel-Good Productivity</em> by Ali Abdaal since
+        I'm a big fan of his work. I'm only through the first three chapters,
+        but he emphasizes that people perform and work less efficiently when
+        they're stressed, and that feeling good leads to success.
       </p>
 
-      <h2>Initial Thoughts</h2>
+      <h2>Too Much Pressure</h2>
       <p>
-        Looking through the discussions, I saw some people using
-        <code>sum([a, b])</code>, which felt almost too straightforward. But I
-        still wanted to attempt the bit manipulation approach, so I referred
-        back to my old <em>Computer Systems</em> coursework, where I wrote about
-        <strong>half-adders, full-adders, and 16-bit adders.</strong>
+        I was putting too much pressure on myself by trying to do everything at
+        once:
       </p>
-
-      <h2>Understanding Adders</h2>
-      <p>Here are some relevant images from my previous coursework:</p>
       <ul>
-        <li>
-          Half-adder: <br />
-          <img src="images/halfadder.png" alt="Half-adder" />
-        </li>
-        <li>
-          Full-adder: <br />
-          <img src="images/fulladder.png" alt="Full-adder" />
-        </li>
-        <li>
-          16-bit adder: <br />
-          <img src="images/16-bit-adder.png" alt="16-bit adder" />
-        </li>
-      </ul>
-
-      <p>From these, I recalled that:</p>
-      <ul>
-        <li><code>xor</code> is used for addition.</li>
-        <li><code>and</code> is used to determine the carry.</li>
-        <li>A full-adder is made of two half-adders and an OR gate.</li>
-        <li>16-bit adders are made of 16 full-adders.</li>
+        <li>Applying for at least 5 jobs every day</li>
+        <li>Solving at least 8 LeetCode problems daily</li>
+        <li>Joining different networking events</li>
+        <li>Completing at least one project per week</li>
+        <li>Contributing to volunteer work</li>
+        <li>Joining datathons</li>
+        <li>Upskilling through online courses</li>
       </ul>
 
       <p>
-        With this in mind, I realized the solution must involve
-        <strong>repeatedly applying XOR and AND</strong> to simulate addition.
+        The list just kept growing—I even thought about learning statistics,
+        bioinformatics, research paper writing, cloud computing, and more.
+        Instead of making progress, I overwhelmed myself and became stressed. I
+        even learned about Notion and how to better organize myself.
       </p>
 
-      <h2>Breaking Down the Approach</h2>
+      <h2>Mindset Shift</h2>
       <p>
-        In Python, working with binary numbers bit by bit was tricky. Using
-        <code>bin(a)</code> wasn’t the solution, since it converts numbers to
-        strings.
+        Another problem was that I kept beating myself up for not being able to
+        solve even easy LeetCode questions. Some people say,
+        <q>Remember the pain of failure so you won’t forget it,</q> but this
+        approach had a negative impact on me. Instead of motivating me, it
+        shattered my confidence, and I even felt overwhelmed by the guilt of
+        looking at solutions. The fear of failure made me reluctant to attempt
+        problems.
       </p>
-
-      <p>
-        After some trial and error (and checking the solution page 😅), I found
-        that the approach was actually quite simple:
-      </p>
-      <ol>
-        <li>Use <code>xor</code> to add the numbers without carrying.</li>
-        <li>Use <code>and</code> to find the carry and shift it left.</li>
-        <li>Repeat until there are no more carries.</li>
-      </ol>
 
       <p>
-        The issue in Python is that numbers can exceed 32 bits, causing the
-        carry to keep shifting indefinitely. To prevent this, we apply a
-        <strong>mask</strong> to keep the result within a fixed bit size (12
-        bits in this case).
+        Now, I'm changing my mindset. I'm not giving up on LeetCode, but I want
+        to make it fun. I accept that I'm not good at it yet—and that's okay.
+        I’m allowing myself to learn by first looking at solutions and gradually
+        moving towards solving problems independently. Like a baby learning to
+        walk, it’s okay to start with support, fall, and use "crutches" again if
+        needed.
       </p>
 
-      <h2>Final Solution</h2>
-      <div class="code">
-        <pre><code>class Solution:
-    def getSum(self, a: int, b: int) -> int:
-        # Perform addition using XOR and recursively shift the carry
-        mask = 0b111111111111  # 12-bit mask (sufficient for range -1000 to 1000)
-        MAX = 0b011111111111   # Max positive number within 12 bits
-
-        if b == 0:
-            return a if a <= MAX else ~(a ^ mask)
-
-        return self.getSum((a ^ b) & mask, ((a & b) << 1) & mask)</code></pre>
-      </div>
-
-      <h2>Final Thoughts</h2>
+      <h2>New Study Plan</h2>
       <p>
-        Honestly, I can only hope I <strong>never</strong> get this question in
-        an interview. But at least now I understand the concept and can explain
-        it if needed. Or I can just use <code>sum([a, b])</code> and hope the
-        interviewer doesn’t mind. 😆
+        My new approach is to focus on <strong>one topic per week</strong>, such
+        as:
+      </p>
+      <ul>
+        <li>Breadth-First Search (this week)</li>
+        <li>Depth-First Search (next week)</li>
+      </ul>
+
+      <p>
+        I'll also revisit at least
+        <strong>one previously solved question every day</strong> to reinforce
+        learning through spaced repetition.
       </p>
 
-      <p><strong>Until next time!</strong></p>
+      <p>
+        That's all for now! I'll update this website more often and share my
+        progress with you all. Hope you're all doing well. Remember to take care
+        of yourself and have fun!
+      </p>
 
       <div class="btn-container">
         <a class="btn" href="2025-03-05-sum-two-digits.html">Prev</a>
@@ -147,5 +131,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

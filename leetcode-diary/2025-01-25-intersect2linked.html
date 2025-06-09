@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
 
   <body>
@@ -39,13 +43,10 @@
         Imagine two linked lists of different lengths having an intersection,
         e.g.:
       </p>
-      <div class="code">
-        <pre><code>A: [3, 6, 3, 7, 1, 4, 2, 5, 10]
+      <pre><code class="language-python">A: [3, 6, 3, 7, 1, 4, 2, 5, 10]
 B: [2, 5, 10]</code></pre>
-      </div>
       <p>If we concatenate A + B and B + A, their lengths become the same:</p>
-      <div class="code">
-        <pre><code>A + B: [3, 6, 3, 7, 1, 4, 2, 5, 10, <b>2</b>, 5, 10]
+      <pre><code class="language-python">A + B: [3, 6, 3, 7, 1, 4, 2, 5, 10, <b>2</b>, 5, 10]
 B + A: [2, 5, 10, 3, 6, 3, 7, 1, 4, <b>2</b>, 5, 10]</code></pre>
       </div>
       <p>
@@ -84,5 +85,7 @@ B + A: [2, 5, 10, 3, 6, 3, 7, 1, 4, <b>2</b>, 5, 10]</code></pre>
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>

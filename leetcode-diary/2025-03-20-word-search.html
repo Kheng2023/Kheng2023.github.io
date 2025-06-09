@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
   </head>
   <body>
     <header>
@@ -46,10 +50,8 @@
         conditions using "or" statements:
       </p>
 
-      <div class="code">
-        <pre><code>if row < 0 or row >= len(board) or column < 0 or column >= len(board[0]) or board[row][column] != word[index]:
+      <pre><code class="language-python">if row < 0 or row >= len(board) or column < 0 or column >= len(board[0]) or board[row][column] != word[index]:
     return False</code></pre>
-      </div>
 
       <p>
         This checks if the current position is out of bounds or if the character
@@ -61,11 +63,9 @@
         directions:
       </p>
 
-      <div class="code">
-        <pre><code>if dfs(row+1, column, index+1) or dfs(row-1, column, index+1) or 
+      <pre><code class="language-python">if dfs(row+1, column, index+1) or dfs(row-1, column, index+1) or 
    dfs(row, column+1, index+1) or dfs(row, column-1, index+1):
     return True</code></pre>
-      </div>
 
       <p>This explores all possible paths until the word is found.</p>
 
@@ -104,8 +104,7 @@
       </ol>
 
       <h2>Full Code:</h2>
-      <div class="code">
-        <pre><code>class Solution:
+      <pre><code class="language-python">class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         # row and column is the position in the board, index is the index of the word
         def dfs(row, column, index):
@@ -133,7 +132,6 @@
                     return True
 
         return False</code></pre>
-      </div>
 
       <p>
         That’s all for today! I’ll keep practicing and refining my approach to
@@ -169,5 +167,7 @@
         </li>
       </ul>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>
