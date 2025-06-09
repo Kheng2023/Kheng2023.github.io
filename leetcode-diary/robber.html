@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>198 House Robber</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>198 House Robber</h1>
+      <p>Posted on: 3/March/2025</p>
+    </header>
+    <main>
+      <p>
+        This problem introduces an interesting way of thinking—imagine yourself
+        as a robber, moving through a street and deciding which houses to rob.
+        The catch? You can’t rob two adjacent houses, so you must always skip at
+        least one.
+      </p>
 
-<body>
-    <div class="container">
-        <h1>198 House Robber</h1>
-        <p>Posted on: 3/March/2025</p>
+      <p>
+        I found this
+        <a
+          href="https://leetcode.com/problems/house-robber/solutions/156523/From-good-to-great.-How-to-approach-most-of-DP-problems/"
+          target="_blank"
+          >guide</a
+        >
+        extremely helpful in explaining how to approach dynamic programming
+        problems. It breaks things down step by step, which makes it easier to
+        understand, but I still need time to digest it all.
+      </p>
 
-        <p>This problem introduces an interesting way of thinking—imagine yourself as a robber, moving through a street
-            and deciding which houses to rob. The catch? You can’t rob two adjacent houses, so you must always skip at
-            least one.</p>
+      <h2>Understanding the Problem</h2>
+      <p>The logic behind solving this problem boils down to two choices:</p>
+      <ul>
+        <li>
+          <strong>Rob the current house</strong> and add the accumulated amount
+          from two houses before.
+        </li>
+        <li>
+          <strong>Skip the current house</strong> and take the total from
+          robbing the previous house.
+        </li>
+      </ul>
+      <p>
+        Since we want to maximize profit, we never skip three houses because
+        that wouldn’t be optimal—there’s always at least one house in between
+        that can be robbed without triggering an alarm.
+      </p>
 
-        <p>I found this <a
-                href="https://leetcode.com/problems/house-robber/solutions/156523/From-good-to-great.-How-to-approach-most-of-DP-problems/"
-                target="_blank">guide</a> extremely helpful in explaining how to approach dynamic programming problems.
-            It breaks things down step by step, which makes it easier to understand, but I still need time to digest it
-            all.</p>
+      <h2>Dynamic Programming Approach</h2>
+      <p>We use two variables to track the maximum profit:</p>
+      <ul>
+        <li>
+          <code>prev1</code>: The maximum amount robbed up to the previous
+          house.
+        </li>
+        <li>
+          <code>prev2</code>: The maximum amount robbed up to two houses before.
+        </li>
+      </ul>
 
-        <h2>Understanding the Problem</h2>
-        <p>The logic behind solving this problem boils down to two choices:</p>
-        <ul>
-            <li><strong>Rob the current house</strong> and add the accumulated amount from two houses before.</li>
-            <li><strong>Skip the current house</strong> and take the total from robbing the previous house.</li>
-        </ul>
-        <p>Since we want to maximize profit, we never skip three houses because that wouldn’t be optimal—there’s always
-            at least one house in between that can be robbed without triggering an alarm.</p>
+      <p>
+        At the end of the loop, <code>prev1</code> will always store the largest
+        possible amount that can be robbed.
+      </p>
 
-        <h2>Dynamic Programming Approach</h2>
-        <p>We use two variables to track the maximum profit:</p>
-        <ul>
-            <li><code>prev1</code>: The maximum amount robbed up to the previous house.</li>
-            <li><code>prev2</code>: The maximum amount robbed up to two houses before.</li>
-        </ul>
-
-        <p>At the end of the loop, <code>prev1</code> will always store the largest possible amount that can be robbed.
-        </p>
-
-        <div class="code">
-            <pre><code>class Solution:
+      <div class="code">
+        <pre><code>class Solution:
     def rob(self, nums: List[int]) -> int:
         if not nums:
             return 0
@@ -58,43 +85,82 @@
             prev2 = temp
 
         return prev1</code></pre>
-        </div>
+      </div>
 
-        <h2>Breaking Down the Code</h2>
-        <p>In each iteration:</p>
-        <ol>
-            <li>We store the previous <code>prev1</code> in a temporary variable.</li>
-            <li>We calculate the new <code>prev1</code> by choosing the larger of:
-                <ul>
-                    <li>Skipping the current house (<code>prev1</code> remains unchanged).</li>
-                    <li>Robbing the current house and adding it to <code>prev2</code>.</li>
-                </ul>
+      <h2>Breaking Down the Code</h2>
+      <p>In each iteration:</p>
+      <ol>
+        <li>
+          We store the previous <code>prev1</code> in a temporary variable.
+        </li>
+        <li>
+          We calculate the new <code>prev1</code> by choosing the larger of:
+          <ul>
+            <li>
+              Skipping the current house (<code>prev1</code> remains unchanged).
             </li>
-            <li>Update <code>prev2</code> to the old <code>prev1</code> value before moving to the next house.</li>
-        </ol>
+            <li>
+              Robbing the current house and adding it to <code>prev2</code>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Update <code>prev2</code> to the old <code>prev1</code> value before
+          moving to the next house.
+        </li>
+      </ol>
 
-        <h2>Final Thoughts</h2>
-        <p>Dynamic programming is still a very new topic for me since I never learned it in university,
-            so I definitely need more practice. But after explaining it in my video, I realized that <code>prev1</code>
-            will always hold the maximum value at the end of the loop.</p>
+      <h2>Final Thoughts</h2>
+      <p>
+        Dynamic programming is still a very new topic for me since I never
+        learned it in university, so I definitely need more practice. But after
+        explaining it in my video, I realized that
+        <code>prev1</code> will always hold the maximum value at the end of the
+        loop.
+      </p>
 
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/FehVQS4j7UA"
-                title="YouTube video player" frameborder="0" allowfullscreen>
-            </iframe>
-        </div>
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/FehVQS4j7UA"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
 
-        <p><strong>Until next time!</strong></p>
+      <p><strong>Until next time!</strong></p>
 
-        <div class="btn-container">
-            <a class="btn" href="same-binary-tree.html">Prev</a>
-            <a class="btn" href="sum-two-digits.html">Next</a>
-        </div>
-        <br>
+      <div class="btn-container">
+        <a class="btn" href="same-binary-tree.html">Prev</a>
+        <a class="btn" href="sum-two-digits.html">Next</a>
+      </div>
+      <nav>
         <a href="main.html">Back to Leetcode Diary</a>
-        <br>
-        <a href="../index.html">Back to homepage</a>
-    </div>
-</body>
-
+      </nav>
+    </main>
+    <footer>
+      <p><a href="main.html">Back to LeetCode Diary</a></p>
+      <p><a href="../index.html">Back to homepage</a></p>
+      <p></p>
+      <p>
+        © 2025 by Yong Kheng Beh |
+        <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a>
+      </p>
+      <ul class="socials">
+        <li>
+          <a href="www.linkedin.com/in/yong-kheng-beh" target="_blank"
+            ><img src="../images/icon-logo-linkedin.png" alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/Kheng2023" target="_blank"
+            ><img src="../images/icon-logo-github.png" alt=""
+          /></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>

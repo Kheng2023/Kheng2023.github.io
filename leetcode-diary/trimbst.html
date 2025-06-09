@@ -1,66 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trim a Binary Search Tree</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
-    <div class="container">
-        <h1>Trim a Binary Search Tree</h1>
-        <p>Posted on: 2025-01-24</p>
-        <p>Today, I was stucked at this coding challenge: given a Binary Search Tree, a low and a high value, remove all
-            nodes which is not withing the range from low to high.</p>
-        <p>Looking at the hints, it seemed like an easy task, but the more lines of code I wrote, the more confused I
-            became. I tried adding more conditions with more lines of code just to resolve the failed test but it will
-            fail the next one or the earlier ones until i have to give up and look at the solution.</p>
-        <p>I’m writing this as a record for my future self and also to clarify what is going on in my mind.</p>
-        <p>The answer was just 9 lines of code! Crazy! While I wrote almost 30 lines and still unable to solve this. I
-            noticed recursion is very useful in many cases, but I always hesitated to use it because I wasn’t able to
-            understand it. So, I took some time to break down the code slowly with an example.</p>
-        <p>I recorded a video to explain it step by step:</p>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/GfcWoj2jRd0"
-                title="YouTube video player" frameborder="0" allowfullscreen>
-            </iframe>
-        </div>
-        <h2>Understanding the Concept</h2>
-        <ol>
-            <li>A binary search tree is built such that all numbers on the left are smaller, and all numbers on the
-                right are larger.</li>
-            <li>For this challenge, given a range, e.g., low = 7 and high = 10, we need to trim all numbers that are out
-                of this boundary. This means we only retain numbers between 7 and 10, removing anything smaller than 7
-                or larger than 10.</li>
-            <li>The smart move is passing the left or right branch recursively into the function.</li>
-            <li>If the root is smaller than the lower bound, then the answer lies somewhere in the right branch, so we
-                pass the right branch as the new root:</li>
-            <div class="code">
-                <pre><code>if root.val < low: 
+  <body>
+    <header>
+      <h1>Trim a Binary Search Tree</h1>
+      <p>Posted on: 2025-01-24</p>
+    </header>
+    <main>
+      <p>
+        Today, I was stucked at this coding challenge: given a Binary Search
+        Tree, a low and a high value, remove all nodes which is not withing the
+        range from low to high.
+      </p>
+      <p>
+        Looking at the hints, it seemed like an easy task, but the more lines of
+        code I wrote, the more confused I became. I tried adding more conditions
+        with more lines of code just to resolve the failed test but it will fail
+        the next one or the earlier ones until i have to give up and look at the
+        solution.
+      </p>
+      <p>
+        I’m writing this as a record for my future self and also to clarify what
+        is going on in my mind.
+      </p>
+      <p>
+        The answer was just 9 lines of code! Crazy! While I wrote almost 30
+        lines and still unable to solve this. I noticed recursion is very useful
+        in many cases, but I always hesitated to use it because I wasn’t able to
+        understand it. So, I took some time to break down the code slowly with
+        an example.
+      </p>
+      <p>I recorded a video to explain it step by step:</p>
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/GfcWoj2jRd0"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <h2>Understanding the Concept</h2>
+      <ol>
+        <li>
+          A binary search tree is built such that all numbers on the left are
+          smaller, and all numbers on the right are larger.
+        </li>
+        <li>
+          For this challenge, given a range, e.g., low = 7 and high = 10, we
+          need to trim all numbers that are out of this boundary. This means we
+          only retain numbers between 7 and 10, removing anything smaller than 7
+          or larger than 10.
+        </li>
+        <li>
+          The smart move is passing the left or right branch recursively into
+          the function.
+        </li>
+        <li>
+          If the root is smaller than the lower bound, then the answer lies
+          somewhere in the right branch, so we pass the right branch as the new
+          root:
+        </li>
+        <div class="code">
+          <pre><code>if root.val < low: 
     return self.trimBST(root.right, low, high)</code></pre>
-            </div>
-            <li>This "trims" the left branch by just moving the root pointer. All the nodes in the left branch still
-                exists in memory. Just that the root pointer now points at the right branch.</li>
-            <li>Similarly, if the root is larger than the upper bound, move the root pointer to the left node:</li>
-            <div class="code">
-                <pre><code>if root.val > high:
+        </div>
+        <li>
+          This "trims" the left branch by just moving the root pointer. All the
+          nodes in the left branch still exists in memory. Just that the root
+          pointer now points at the right branch.
+        </li>
+        <li>
+          Similarly, if the root is larger than the upper bound, move the root
+          pointer to the left node:
+        </li>
+        <div class="code">
+          <pre><code>if root.val > high:
     return self.trimBST(root.left, low, high)</code></pre>
-            </div>
-            <li>Finally, when the root is within the range, it proceeds to trim left and right branches
-                recursively and return the root:</li>
-            <div class="code">
-                <pre><code>root.left = self.trimBST(root.left, low, high)
+        </div>
+        <li>
+          Finally, when the root is within the range, it proceeds to trim left
+          and right branches recursively and return the root:
+        </li>
+        <div class="code">
+          <pre><code>root.left = self.trimBST(root.left, low, high)
 root.right = self.trimBST(root.right, low, high)
 return root</code></pre>
-            </div>
-            <li>The full code:</li>
-            <div class="code">
-                <pre><code>class Solution:
+        </div>
+        <li>The full code:</li>
+        <div class="code">
+          <pre><code>class Solution:
     def trimBST(self, root: TreeNode, low: int, high: int) -> TreeNode:
         if not root:
             return None
@@ -71,20 +114,37 @@ return root</code></pre>
         root.left = self.trimBST(root.left, low, high)
         root.right = self.trimBST(root.right, low, high)
         return root</code></pre>
-            </div>
-        </ol>
-        <p>Hope this explanation helps! And hope in the future . Watch the video for more
-            details. See you in the next post!</p>
-
-        <div class="btn-container">
-            <a class="btn" href="intersect2linked.html">Next</a>
         </div>
-        <br>
-        <a href="main.html">Back to Leetcode Diary</a>
-        <br>
-        <a href="../index.html">Back to homepage</a>
+      </ol>
+      <p>
+        Hope this explanation helps! And hope in the future . Watch the video
+        for more details. See you in the next post!
+      </p>
 
-    </div>
-</body>
-
+      <div class="btn-container">
+        <a class="btn" href="intersect2linked.html">Next</a>
+      </div>
+    </main>
+    <footer>
+      <p><a href="main.html">Back to LeetCode Diary</a></p>
+      <p><a href="../index.html">Back to homepage</a></p>
+      <p></p>
+      <p>
+        © 2025 by Yong Kheng Beh |
+        <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a>
+      </p>
+      <ul class="socials">
+        <li>
+          <a href="www.linkedin.com/in/yong-kheng-beh" target="_blank"
+            ><img src="../images/icon-logo-linkedin.png" alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/Kheng2023" target="_blank"
+            ><img src="../images/icon-logo-github.png" alt=""
+          /></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>
