@@ -294,7 +294,7 @@ body.resume {
 
 /* Hero section */
 .hero {
-  background: #00335c;
+  background: url("../images/bg-hero-dark-blue.png") no-repeat center center;
   padding: 3em 0 2em 0;
   text-align: center;
   box-shadow: 0 4px 24px rgba(25, 118, 210, 0.1);
