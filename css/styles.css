@@ -35,7 +35,7 @@ body {
 body {
   background-color: #f6f6f6;
   margin: 0;
-  font-family: "Rubik", serif;
+  font-family: "Fredoka", sans-serif;
   font-size: 1.5rem;
   line-height: 1.4;
 }
@@ -43,10 +43,10 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Courgette", serif;
+  font-family: "Fredoka", sans-serif;
   font-weight: 400;
   margin: 0;
-  color: #0d47a1; /* Deep Blue */
+  color: #00335c;
 }
 
 h1 {
@@ -73,15 +73,15 @@ a:hover {
 }
 
 footer a {
-  color: #1976d2;
+  color: #00566c;
 }
 
 footer a:hover {
-  color: #0d47a1;
+  color: #5baee2;
 }
 
 .btn {
-  background: #1976d2; /* Ocean Blue */
+  background: #00335c; /* Ocean Blue */
   color: #f6f6f6;
   text-decoration: none;
   text-transform: uppercase;
@@ -96,8 +96,8 @@ footer a:hover {
 
 .btn:hover,
 .btn:focus {
-  background: #0d47a1; /* Deep Blue */
-  color: #b3e5fc; /* Light Blue */
+  background: #ff4500; /* Deep Blue */
+  color: #f6f6f6; /* Light Blue */
 }
 
 .content-wrapper {
@@ -149,7 +149,7 @@ footer a:hover {
 }
 
 .resume-section h2 {
-  border-bottom: 2px dashed #6b9df8;
+  border-bottom: 2px dashed #002d50;
 }
 
 .download-link {
@@ -254,8 +254,8 @@ footer a:hover {
 /* FOOTER
 -------------------------------------------*/
 footer {
-  background: #b3e5fc; /* Light Blue */
-  color: #0d47a1; /* Deep Blue */
+  background: #ffffff; /* Light Blue */
+  color: #00335c; /* Deep Blue */
   padding: 1.5em 0 1em 0;
   text-align: center;
   margin-top: 3em;
@@ -287,14 +287,14 @@ footer {
 
 body.home,
 body.resume {
-  background: #e3f2fd; /* Sand */
+  background: #ffffff;
   min-height: 100vh;
-  font-family: "Rubik", Arial, sans-serif;
+  font-family: "Fredoka", Arial, sans-serif;
 }
 
 /* Hero section */
 .hero {
-  background: linear-gradient(#aad6fa, #3eb5e4); /* Wave */
+  background: #00335c;
   padding: 3em 0 2em 0;
   text-align: center;
   box-shadow: 0 4px 24px rgba(25, 118, 210, 0.1);
@@ -308,7 +308,7 @@ body.resume {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #b3e5fc;
+  border: 4px solid #66b2e0;
   margin-bottom: 1em;
   box-shadow: 0 2px 12px rgba(44, 62, 80, 0.1);
 }
@@ -320,15 +320,15 @@ body.resume {
 }
 
 .hero h1 {
-  font-family: "Courgette", cursive;
+  font-family: "Fredoka", sans-serif;
   font-size: 3.2rem;
-  color: #0d47a1;
+  color: #66b2e0;
   margin-bottom: 0.2em;
 }
 
 .hero h2 {
   font-size: 1.5rem;
-  color: #1976d2;
+  color: #66b2e0;
   margin-top: 0;
   font-weight: 400;
 }
@@ -336,12 +336,12 @@ body.resume {
 .hero p {
   max-width: 500px;
   margin: 1.5em auto 0 auto;
-  color: #000833;
+  color: #ffffff;
 }
 
 /* Card backgrounds */
 .card {
-  background: #bfe2fc;
+  background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
   padding: 2em 2em 1.5em 2em;
@@ -352,7 +352,7 @@ body.resume {
   flex-direction: column;
   align-items: flex-start;
   transition: transform 0.13s, box-shadow 0.13s;
-  border: 1.5px solid #64b5f6;
+  border: 1.5px solid #5baee2;
   position: relative;
   overflow: hidden;
 }
@@ -365,7 +365,7 @@ body.resume {
 .card .icon {
   font-size: 2.2rem;
   margin-bottom: 0.7em;
-  color: #347d99;
+  color: #00335c;
 }
 
 .card::before {
@@ -379,19 +379,19 @@ body.resume {
 }
 
 .card h3 {
-  color: #0d47a1;
-  font-family: "Courgette", cursive;
+  color: #00335c;
+  font-family: "Fredoka", sans-serif;
 }
 
 .card p {
-  color: #000833;
+  color: #00335c;
   margin-bottom: 1em;
   font-size: 1.5rem;
 }
 
 .card a {
-  color: #1976d2;
-  border-bottom: 1.5px solid #64b5f6;
+  color: #66b2e0;
+  border-bottom: 1.5px solid #66b2e0;
   text-decoration: none;
   transition: color 0.15s, border-color 0.15s;
   font-size: 1.35rem;
@@ -400,23 +400,6 @@ body.resume {
 .card a:hover {
   color: #0d47a1;
   border-bottom: 1.5px solid #1976d2;
-}
-
-/* Optional: Subtle ocean wave pattern overlay */
-body.home::before,
-body.resume::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  opacity: 0.07;
-  z-index: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
-  background-repeat: repeat;
-  background-size: 220px 220px;
 }
 
 .section-cards {
