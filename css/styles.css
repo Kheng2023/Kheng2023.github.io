@@ -18,7 +18,7 @@ Wave: #64b5f6
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  /* 1rem = 10px */
+  scroll-behavior: smooth;
 }
 
 *,
@@ -410,4 +410,75 @@ body.resume {
   align-items: stretch;
   width: 100%;
   margin: 2em 0 2.5em 0;
+}
+
+/* Sticky Navigation Bar */
+#resume-nav {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  padding: 15px 0;
+  border-bottom: 2px solid #00335c;
+  z-index: 1000; /* Ensures it stays on top of other content */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#resume-nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #00335c;
+  font-size: 1.5rem;
+}
+
+#resume-nav a:hover {
+  color: #ff4500;
+  border-bottom: 2px solid #ff4500;
+}
+
+/* Accordion Styles */
+.work-item .work-details {
+  cursor: pointer; /* Changes mouse to a pointer hand */
+  position: relative;
+}
+
+.work-item .work-details:hover h3 {
+  color: #ff4500; /* Highlight color on hover */
+}
+
+/* Add a visual cue (a plus sign) */
+.work-item .work-details::after {
+  content: "expand +";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5rem;
+  color: #00335c;
+}
+
+/* When expanded, change plus to minus */
+.work-item.expanded .work-details::after {
+  content: "hide -";
+}
+
+/* By default, hide the summary */
+.work-summary {
+  display: none;
+  padding-top: 10px;
+  animation: fadeIn 0.5s;
+}
+
+/* When the parent has the 'expanded' class, show the summary */
+.work-item.expanded .work-summary {
+  display: block;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

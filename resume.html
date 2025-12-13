@@ -1,397 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yong Kheng Beh | Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka:wght@300..700&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yong Kheng Beh | Resume</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka:wght@300..700&family=Rubik&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <body class="resume">
+    <!-- //  INTRO  // -->
+    <header>
+      <div class="content-wrapper">
+        <h1>Yong Kheng Beh</h1>
+        <h2>Software Developer + Doctor</h2>
+        <a href="index.html">Back to homepage</a>
+      </div>
+    </header>
 
-<body class="resume">
-  <!-- //  INTRO  // -->
-  <header>
-    <div class="content-wrapper">
-      <h1>Yong Kheng Beh</h1>
-      <h2>Software Developer + Doctor</h2>
-    </div>
-  </header>
+    <main class="content-wrapper">
+      <!-- //  PROFILE  // -->
+      <section class="resume-section" id="profile">
+        <h2>Profile</h2>
+        <p>
+          A unique combination of computer science and medical expertise, with a
+          strong passion for healthcare technology. I specialize in AI-driven
+          solutions, backend development, and software engineering, eager to
+          apply my knowledge to meaningful projects that bridge technology and
+          healthcare.
+        </p>
+      </section>
 
-  <main class="content-wrapper">
-    <!-- //  PROFILE  // -->
-    <section class="resume-section" id="profile">
-      <h2>Profile</h2>
-      <p>
-        A unique combination of computer science and medical expertise, with a
-        strong passion for healthcare technology. I specialize in AI-driven
-        solutions, backend development, and software engineering, eager to
-        apply my knowledge to meaningful projects that bridge technology and
-        healthcare.
-      </p>
+      <!-- //  PROJECTS  // -->
+      <section class="resume-section" id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-wrapper">
+          <section class="project-item">
+            <img
+              src="images/project-chatbot-500px.jpg"
+              alt="SACommunity Chatbot"
+            />
+            <h3>SACommunity Chatbot Project</h3>
+            <p>
+              Key Skills: Python, LangChain, Flask, Docker, Agile Software
+              Development
+            </p>
+            <p>
+              Developed an AI-powered chatbot which uses Large Language Model
+              and semantic search to enhance the search functionality of a
+              not-for-profit organization's database (14,000+ records). Utilized
+              LangChain to implement a Retrieval-Augmented Generation (RAG)
+              chatbot, providing accurate and context-aware search results.
+            </p>
+            <a
+              class="btn"
+              href="https://sacommunity.org/node/1202"
+              target="_blank"
+              >Project Report</a
+            >
+            <a
+              class="btn"
+              href="https://github.com/Kheng2023/SACommunityChatbot"
+              target="_blank"
+              >GitHub Repository</a
+            >
+          </section>
+        </div>
+
+        <div class="project-wrapper">
+          <section class="project-item">
+            <img
+              src="images/project-drupal-migration-blog-500px.jpg"
+              alt="Drupal Migration Guides Blog"
+            />
+            <h3>Drupal Migration Guides Blog</h3>
+            <p>
+              Key Skills: Drupal 11, PHP, MySQL, Technical Writing, Web
+              Development
+            </p>
+            <p>
+              A series of technical blog posts documenting my experience and
+              lessons learned while contributing to the Drupal 11 migration of
+              SAcommunity.org, a not-for-profit organisation website. The guides
+              mainly the site migration strategies. I used Jekyll to create a
+              static website to host the blog.
+            </p>
+            <a
+              class="btn"
+              href="https://kheng2023.github.io/Drupal-Migration-Blog/"
+              target="_blank"
+              >Explore Drupal Migration Guides</a
+            >
+          </section>
+        </div>
+
+        <div class="project-wrapper">
+          <section class="project-item">
+            <img src="images/project-leetcode-500px.jpg" alt="LeetCode Diary" />
+            <h3>LeetCode Diary</h3>
+            <p>
+              Key Skills: Python, Algorithms, Data Structures, Object-Oriented
+              Programming
+            </p>
+            <p>
+              A personal diary where I document my learning journey while
+              solving LeetCode problems. This helps me improve my coding skills,
+              deepen my understanding of key concepts, and track my progress.
+              The diary is a work in progress, and I will continue adding
+              content as I practice and learn more.
+            </p>
+            <a class="btn" href="leetcode-diary/main.html" target="_blank"
+              >Explore LeetCode Diary</a
+            >
+            <a
+              class="btn"
+              href="https://www.youtube.com/playlist?list=PLMZO6MTU0gffRlGMo_aY1Rpbb1u3suu-C"
+              target="_blank"
+              >Watch on YouTube</a
+            >
+          </section>
+        </div>
+
+        <div class="project-wrapper">
+          <section class="project-item">
+            <img
+              src="images/project-priority-matrix-500px.jpg"
+              alt="Priority Matrix Project"
+            />
+            <h3>Priority Matrix Project</h3>
+            <p>Key Skills: React, JavaScript, GitHub Copilot, UI/UX Design</p>
+            <p>
+              Inspired by the book <em>What Color Is Your Parachute?</em> by
+              Richard Nelson Bolles, this project is a web-based priority matrix
+              tool that helps users to add, compare and rank 10 items. I
+              leveraged GitHub Copilot to assist in writing React code.
+            </p>
+            <p>
+              <strong>Future Plans:</strong> Expand the comparison feature to
+              support more items and visualize results as a "petal" and
+              eventually a "flower" diagram, as described in the book.
+            </p>
+            <a
+              class="btn"
+              href="https://github.com/Kheng2023/priority-matrix"
+              target="_blank"
+              >GitHub Repository</a
+            >
+            <a
+              class="btn"
+              href="https://kheng2023.github.io/priority-matrix/"
+              target="_blank"
+              >Live Demo</a
+            >
+          </section>
+        </div>
+      </section>
+
+      <!-- //  WORK EXPERIENCE  // -->
+      <section class="resume-section" id="work-experience">
+        <h2>Work Experience</h2>
+        <section class="work-item">
+          <div class="work-details">
+            <h3>Research Assistant</h3>
+            <p>Corcillum</p>
+            <p>Oct 2025 - Present</p>
+          </div>
+          <div class="work-summary">
+            <p>
+              Assisting company in annotating angiogram images leveraging my
+              medical background to ensure accurate and reliable data for
+              machine learning model training.
+            </p>
+            <p>
+              Key Skills: Medical Image Annotation, Data Quality Assurance, Team
+              Collaboration
+            </p>
+            <p>Key Achievements:</p>
+            <ul>
+              <li>
+                Annotating coronary angiogram images with high accuracy,
+                leveraging my medical training to ensure clinically reliable
+                labels for AI model development.
+              </li>
+              <li>
+                Providing structured feedback on the performance, usability, and
+                workflow of the annotation software, acting as a tester to help
+                improve tool efficiency and user experience.
+              </li>
+              <li>
+                Developing clear and practical annotation guidelines to support
+                new annotators, based on best practices refined through my own
+                high-quality and consistent annotation work.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="work-item">
+          <div class="work-details">
+            <h3>Data Science Intern</h3>
+            <p>IOC-UNESCO – Ocean Decade Programme (Paris, France) (Remote)</p>
+            <p>June 2025 - September 2025</p>
+          </div>
+          <div class="work-summary">
+            <p>
+              Selected for a competitive internship to support data management
+              and analysis for the UN Ocean Decade programme. Main
+              responsibilities included cleaning and standardising historical
+              datasets. Designed and built a relational database to support in
+              development of the searchable database.
+            </p>
+            <p>
+              Key Skills: Python, Data Cleaning, Natural Language Processing,
+              Relational Database Design, Data Visualisation, Remote
+              Collaboration
+            </p>
+            <p>Key Achievements:</p>
+            <ul>
+              <li>
+                Cleaned and standardised all datasets collected by the UN Ocean
+                Decade programme over the past five years to improve data
+                quality and usability.
+              </li>
+              <li>
+                Designed an interactive data schema and built a relational
+                database to support long-term data management and analysis.
+              </li>
+              <li>
+                Documented the full database structure to ensure clarity,
+                maintainability, and smooth handover for future developers.
+              </li>
+              <li>
+                Reviewed the technical requirements for an upcoming full-stack
+                platform where the database will be integrated.
+              </li>
+              <li>
+                Collaborated with the Decade Operations Team to refine processes
+                for clean and consistent data intake.
+              </li>
+              <li>
+                Coordinated updates with the broader Ocean Decade Team to ensure
+                newly received data was captured, validated, and aligned with
+                the database design.
+              </li>
+              <li>
+                Recognised for outstanding performance, strong accountability,
+                and exceptional work ethic throughout the assignment.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="work-item">
+          <div class="work-details">
+            <h3>Volunteer – Website Rebuild Team</h3>
+            <p>Connecting Up, Infoxchange, Adelaide, South Australia</p>
+            <p>Jan 2025 – Present</p>
+          </div>
+          <div class="work-summary">
+            <p>
+              Contributing to the rebuild of SAcommunity.org, a not-for-profit
+              organisation website, as part of a cross-functional team using
+              Drupal 11.
+            </p>
+            <p>
+              Key Skills: Drupal 11, PHP, MySQL, Agile Software Development,
+              Team Collaboration
+            </p>
+            <p>Key Achievements:</p>
+            <ul>
+              <li>
+                Redeveloped the SAcommunity.org website to improve
+                functionality, performance, and user experience using Drupal,
+                MySQL, and Docker.
+              </li>
+              <li>
+                Gathered and analysed requirements in collaboration with the
+                SAcommunity.org Directory Manager and Connecting Up leadership
+                to guide redevelopment priorities.
+              </li>
+              <li>
+                Created detailed, step-by-step onboarding guides in GitHub to
+                streamline volunteer onboarding and foster efficient
+                collaboration.
+              </li>
+              <li>
+                Set up and maintained a GitHub Project Kanban board,
+                coordinating task allocation to ensure clarity and productive
+                contribution across the volunteer team.
+              </li>
+              <li>
+                Leveraged LLMs (Gemini) to transform unstructured data into
+                structured formats for integration into the new website
+                database.
+              </li>
+              <li>
+                Led the transformation and loading stages of the ETL process by
+                developing Python scripts for data cleansing and restructuring,
+                and authoring Drupal Migration YAML for seamless data import.
+              </li>
+              <li>
+                Explored opportunities to integrate an AI-powered chatbot (based
+                on a previous project) to enhance user engagement once the new
+                site was ready for deployment.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+          <div class="work-details">
+            <h3>Software Engineering Intern</h3>
+            <p>YourAnswer International Pty Ltd, Adelaide</p>
+            <p>July to October 2024</p>
+          </div>
+          <div class="work-summary">
+            <p>
+              Developed automated evaluation software to compare the semantic
+              search performance of different embedding models, chunking
+              methods, and vector stores. Conducted extensive research and
+              provided detailed technical documentation to facilitate future
+              experimentation.
+            </p>
+            <p>
+              Key Skills: Python, Bash (Linux), AI/ML (Embeddings, Vector
+              Search), Docker, OpenSearch
+            </p>
+            <p>Key Achievements:</p>
+            <ul>
+              <li>
+                Developed a Python-based testing framework, automated via shell
+                scripts to streamline semantic search evaluation, significantly
+                reduced manual testing time.
+              </li>
+              <li>
+                Conducted extensive experimentation and benchmarking with
+                top-ranked embedding models from the MTEB leaderboard on Hugging
+                Face.
+              </li>
+              <li>
+                Benchmarked and optimized semantic search performance across
+                multiple vector stores, including OpenSearch.
+              </li>
+              <li>
+                Resolved a critical semantic ranking bug, identifying that the
+                system used cosine distance instead of similarity scoring, which
+                significantly improved search accuracy and result relevance.
+              </li>
+              <li>
+                Documented experimentation results and written comprehensive
+                technical reports to ensure effective knowledge transfer.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+          <div class="work-details">
+            <h3>Industry Project Intern</h3>
+            <p>Connecting Up, Infoxchange, Adelaide</p>
+            <p>March to June 2024</p>
+          </div>
+          <div class="work-summary">
+            <p>
+              Led backend development for a full-stack AI-powered chatbot as
+              part of a four-member team for SAcommunity.org, a community
+              directory website.
+            </p>
+            <p>
+              Key Skills: Python, LangChain, Flask, Docker, Agile Software
+              Development
+            </p>
+            <p>Key Achievements:</p>
+            <ul>
+              <li>
+                Led backend development, successfully integrating the LangChain
+                library to enable LLM-based tool calls and semantic search,
+                resulting in an Agentic RAG (Retrieval-Augmented Generation)
+                chatbot capable of handling vague human queries with high
+                accuracy.
+              </li>
+              <li>
+                Optimized chatbot performance by applying advanced prompt
+                engineering and retrieval strategies to improve response
+                relevance.
+              </li>
+              <li>
+                Deployed the chatbot using Docker, resolving compatibility
+                issues within an outdated software environment and ensuring
+                smooth operation.
+              </li>
+              <li>
+                Worked closely with frontend developers and stakeholders to
+                refine chatbot functionality for real-world use cases.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="work-item">
+          <div class="work-details">
+            <h3>Research Assistant – Machine Learning in Cardiac Surgery</h3>
+            <p>Australian Institute of Machine Learning (AIML), Adelaide</p>
+            <p>December 2023 to February 2024</p>
+          </div>
+          <div class="work-summary">
+            <p>
+              Awarded AIML Summer Research Project Scholarship, applying a
+              unique blend of medical and computing knowledge to advance AI
+              applications in cardiology
+            </p>
+            <p>
+              Key Skills: Python, Data Analysis(Pandas, Matplotlib, Seaborn),
+              Machine Learning(Scikit-Learn)
+            </p>
+            <p>Key Achievements:</p>
+            <ul>
+              <li>
+                Collaborated with healthcare experts and machine learning
+                specialist to explore AI-driven decision-making solutions for
+                medical applications.
+              </li>
+              <li>
+                Processed and analyzed a large-scale healthcare dataset
+                containing 6,000+ patient records, developing machine learning
+                models to predict patient outcomes.
+              </li>
+              <li>
+                Researched and reviewed AI-driven predictive analytics in
+                healthcare, integrating insights into model design.
+              </li>
+              <li>
+                Presented findings at the end of the internship to a panel of
+                researchers.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- //  EDUCATION & CERTIFICATIONS  // -->
+      <section class="resume-section" id="education">
+        <h2>Education</h2>
+
+        <section class="education-item">
+          <h3>Master of Computing and Innovation</h3>
+          <p>University of Adelaide, Australia, 2023 - 2024</p>
+          <p>GPA: 6.83/7</p>
+          <p>
+            Courses completed: Computer Networks & Applications, Introduction to
+            Statistical Machine Learning, Computer Systems, Operating Systems,
+            Algorithm and Data Structure Algorithm Analysis, Software
+            Engineering and Project, Project Management Fundamentals
+          </p>
+        </section>
+
+        <section class="education-item">
+          <h3>Bachelor of Medicine, Bachelor of Surgery (MBBS)</h3>
+          <p>University of Malaya, Malaysia, 2009 - 2014</p>
+        </section>
+      </section>
+    </main>
+
+    <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
+    <footer>
       <a href="index.html">Back to homepage</a>
-    </section>
-
-    <!-- //  PROJECTS  // -->
-    <section class="resume-section" id="projects">
-      <h2>Projects</h2>
-
-      <div class="project-wrapper">
-        <section class="project-item">
-          <img src="images/project-chatbot-500px.jpg" alt="SACommunity Chatbot" />
-          <h3>SACommunity Chatbot Project</h3>
-          <p>
-            Key Skills: Python, LangChain, Flask, Docker, Agile Software
-            Development
-          </p>
-          <p>
-            Developed an AI-powered chatbot which uses Large Language Model
-            and semantic search to enhance the search functionality of a
-            not-for-profit organization's database (14,000+ records). Utilized
-            LangChain to implement a Retrieval-Augmented Generation (RAG)
-            chatbot, providing accurate and context-aware search results.
-          </p>
-          <a class="btn" href="https://sacommunity.org/node/1202" target="_blank">Project Report</a>
-          <a class="btn" href="https://github.com/Kheng2023/SACommunityChatbot" target="_blank">GitHub Repository</a>
-        </section>
-      </div>
-
-
-      <div class="project-wrapper">
-        <section class="project-item">
-          <img src="images/project-drupal-migration-blog-500px.jpg" alt="Drupal Migration Guides Blog" />
-          <h3>Drupal Migration Guides Blog</h3>
-          <p>
-            Key Skills: Drupal 11, PHP, MySQL, Technical Writing, Web
-            Development
-          </p>
-          <p>
-            A series of technical blog posts documenting my experience and
-            lessons learned while contributing to the Drupal 11 migration of
-            SAcommunity.org, a not-for-profit organisation website. The guides
-            mainly the site migration strategies. I used Jekyll to create a
-            static website to host the blog.
-          </p>
-          <a class="btn" href="https://kheng2023.github.io/Drupal-Migration-Blog/" target="_blank">Explore Drupal
-            Migration Guides</a>
-        </section>
-      </div>
-
-      <div class="project-wrapper">
-        <section class="project-item">
-          <img src="images/project-leetcode-500px.jpg" alt="LeetCode Diary" />
-          <h3>LeetCode Diary</h3>
-          <p>
-            Key Skills: Python, Algorithms, Data Structures, Object-Oriented
-            Programming
-          </p>
-          <p>
-            A personal diary where I document my learning journey while
-            solving LeetCode problems. This helps me improve my coding skills,
-            deepen my understanding of key concepts, and track my progress.
-            The diary is a work in progress, and I will continue adding
-            content as I practice and learn more.
-          </p>
-          <a class="btn" href="leetcode-diary/main.html" target="_blank">Explore LeetCode Diary</a>
-          <a class="btn" href="https://www.youtube.com/playlist?list=PLMZO6MTU0gffRlGMo_aY1Rpbb1u3suu-C"
-            target="_blank">Watch on YouTube</a>
-        </section>
-      </div>
-
-      <div class="project-wrapper">
-        <section class="project-item">
-          <img src="images/project-priority-matrix-500px.jpg" alt="Priority Matrix Project" />
-          <h3>Priority Matrix Project</h3>
-          <p>Key Skills: React, JavaScript, GitHub Copilot, UI/UX Design</p>
-          <p>
-            Inspired by the book <em>What Color Is Your Parachute?</em> by
-            Richard Nelson Bolles, this project is a web-based priority matrix
-            tool that helps users to add, compare and rank 10 items. I
-            leveraged GitHub Copilot to assist in writing React code.
-          </p>
-          <p>
-            <strong>Future Plans:</strong> Expand the comparison feature to
-            support more items and visualize results as a "petal" and
-            eventually a "flower" diagram, as described in the book.
-          </p>
-          <a class="btn" href="https://github.com/Kheng2023/priority-matrix" target="_blank">GitHub Repository</a>
-          <a class="btn" href="https://kheng2023.github.io/priority-matrix/" target="_blank">Live Demo</a>
-        </section>
-      </div>
-    </section>
-
-    <!-- //  WORK EXPERIENCE  // -->
-    <section class="resume-section" id="work-experience">
-      <h2>Work Experience</h2>
-      <section class="work-item">
-        <div class="work-details">
-          <h3>Research Assistant</h3>
-          <p>Corcillum</p>
-          <p>Oct 2025 - Present</p>
-        </div>
-        <div class="work-summary">
-          <p>
-            Assisting company in annotating angiogram images leveraging my medical background to ensure accurate and
-            reliable data for machine learning model training.
-          </p>
-          <p>
-            Key Skills: Medical Image Annotation, Data Quality Assurance,
-            Team Collaboration
-          </p>
-          <p>Key Achievements:</p>
-          <ul>
-            <li>Annotating coronary angiogram images with high accuracy, leveraging my medical training to ensure
-              clinically reliable labels for AI model development.</li>
-            <li>Providing structured feedback on the performance, usability, and workflow of the annotation software,
-              acting as a tester to help improve tool efficiency and user experience.</li>
-            <li>Developing clear and practical annotation guidelines to support new annotators, based on best practices
-              refined through my own high-quality and consistent annotation work.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="work-item">
-        <div class="work-details">
-          <h3>Data Science Intern</h3>
-          <p>IOC-UNESCO – Ocean Decade Programme (Paris, France) (Remote)</p>
-          <p>June 2025 - September 2025</p>
-        </div>
-        <div class="work-summary">
-          <p>
-            I was selected for a competitive internship to support data
-            management and analysis for the UN Ocean Decade programme. My main
-            responsibilities included cleaning and standardising historical
-            datasets. I also designed and built a relational database to
-            support in development of the searchable database.
-          </p>
-          <p>
-            Key Skills: Python, Data Cleaning, Text Mining, Data Visualisation,
-            Remote Collaboration
-          </p>
-          <p>Key Achievements:</p>
-          <ul>
-            <li>Cleaned and standardised all datasets collected by the UN Ocean Decade programme over the past five
-              years to improve data quality and usability. </li>
-            <li>Designed an interactive data schema and built a relational database to support long-term data management
-              and analysis. </li>
-            <li>Documented the full database structure to ensure clarity, maintainability, and smooth handover for
-              future developers.</li>
-            <li>Reviewed the technical requirements for an upcoming full-stack platform where the database will be
-              integrated.</li>
-            <li>Collaborated with the Decade Operations Team to refine processes for clean and consistent data intake.
-            </li>
-            <li>Coordinated updates with the broader Ocean Decade Team to ensure newly received data was captured,
-              validated, and aligned with the database design.</li>
-            <li>Recognised for outstanding performance, strong accountability, and exceptional work ethic throughout the
-              assignment.</li>
-        </div>
-      </section>
-
-      <section class="work-item">
-        <div class="work-details">
-          <h3>Volunteer – Website Rebuild Team</h3>
-          <p>Connecting Up, Infoxchange, Adelaide, South Australia</p>
-          <p>Jan 2025 – Present</p>
-        </div>
-        <div class="work-summary">
-          <p>
-            Contributing to the rebuild of SAcommunity.org, a not-for-profit
-            organisation website, as part of a cross-functional team using
-            Drupal 11.
-          </p>
-          <p>
-            Key Skills: Drupal 11, PHP, MySQL, Agile Software Development,
-            Team Collaboration
-          </p>
-          <p>Key Achievements:</p>
-          <ul>
-            <li>Redeveloped the SAcommunity.org website to improve functionality, performance, and user experience using
-              Drupal, MySQL, and Docker. </li>
-            <li>Gathered and analysed requirements in collaboration with the SAcommunity.org Directory Manager and
-              Connecting Up leadership to guide redevelopment priorities. </li>
-            <li>Created detailed, step-by-step onboarding guides in GitHub to streamline volunteer onboarding and foster
-              efficient collaboration.</li>
-            <li>Set up and maintained a GitHub Project Kanban board, coordinating task allocation to ensure clarity and
-              productive contribution across the volunteer team.</li>
-            <li>Leveraged LLMs (Gemini) to transform unstructured data into structured formats for integration into the
-              new website database.</li>
-            <li>Led the transformation and loading stages of the ETL process by developing Python scripts for data
-              cleansing and restructuring, and authoring Drupal Migration YAML for seamless data import.</li>
-            <li>Explored opportunities to integrate an AI-powered chatbot (based on a previous project) to enhance user
-              engagement once the new site was ready for deployment.</li>
-          </ul>
-        </div>
-      </section>
-      <section class="work-item">
-        <div class="work-details">
-          <h3>Software Development Intern</h3>
-          <p>YourAnswer International Pty Ltd, Adelaide</p>
-          <p>July to October 2024</p>
-        </div>
-        <div class="work-summary">
-          <p>
-            Developed automated evaluation software to compare the semantic
-            search performance of different embedding models, chunking
-            methods, and vector stores. Conducted extensive research and
-            provided detailed technical documentation to facilitate future
-            experimentation.
-          </p>
-          <p>
-            Key Skills: Python, Bash (Linux), AI/ML (Embeddings, Vector
-            Search), Docker, OpenSearch
-          </p>
-          <p>Key Achievements:</p>
-          <ul>
-            <li>Developed a Python-based testing framework, automated via shell scripts to streamline semantic search
-              evaluation, significantly reduced manual testing time.
-            </li>
-            <li>
-              Conducted extensive experimentation and benchmarking with
-              top-ranked embedding models from the MTEB leaderboard on Hugging
-              Face.
-            </li>
-            <li>
-              Benchmarked and optimized semantic search performance across
-              multiple vector stores, including OpenSearch.
-            </li>
-            <li>
-              Resolved a critical semantic ranking bug, identifying that the system used cosine distance instead of
-              similarity scoring, which significantly improved search accuracy and result relevance.
-            </li>
-            <li>
-              Documented experimentation results and written comprehensive
-              technical reports to ensure effective knowledge transfer.
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="work-item">
-        <div class="work-details">
-          <h3>Industry Project Intern</h3>
-          <p>Connecting Up, Infoxchange, Adelaide</p>
-          <p>March to June 2024</p>
-        </div>
-        <div class="work-summary">
-          <p>
-            Led backend development for a full-stack AI-powered chatbot as
-            part of a four-member team for SAcommunity.org, a community directory website.
-          </p>
-          <p>
-            Key Skills: Python, LangChain, Flask, Docker, Agile Software
-            Development
-          </p>
-          <p>Key Achievements:</p>
-          <ul>
-            <li>
-              Led backend development, successfully integrating the LangChain
-              library to enable LLM-based tool calls and semantic search,
-              resulting in an Agentic RAG (Retrieval-Augmented Generation)
-              chatbot capable of handling vague human queries with high
-              accuracy.
-            </li>
-            <li>
-              Optimized chatbot performance by applying advanced prompt
-              engineering and retrieval strategies to improve response
-              relevance.
-            </li>
-            <li>
-              Deployed the chatbot using Docker, resolving compatibility
-              issues within an outdated software environment and ensuring
-              smooth operation.
-            </li>
-            <li>
-              Worked closely with frontend developers and stakeholders to
-              refine chatbot functionality for real-world use cases.
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="work-item">
-        <div class="work-details">
-          <h3>Research Assistant – Machine Learning in Cardiac Surgery </h3>
-          <p>Australian Institute of Machine Learning (AIML), Adelaide</p>
-          <p>December 2023 to February 2024</p>
-        </div>
-        <div class="work-summary">
-          <p>
-            Awarded AIML Summer Research Project Scholarship, applying a unique blend of medical and computing knowledge
-            to advance AI applications in cardiology
-          </p>
-          <p>
-            Key Skills: Python, Data Analysis(Pandas, Matplotlib, Seaborn),
-            Machine Learning(Scikit-Learn)
-          </p>
-          <p>Key Achievements:</p>
-          <ul>
-            <li>
-              Collaborated with healthcare experts and machine learning
-              specialist to explore AI-driven decision-making solutions for
-              medical applications.
-            </li>
-            <li>
-              Processed and analyzed a large-scale healthcare dataset
-              containing 6,000+ patient records, developing machine learning
-              models to predict patient outcomes.
-            </li>
-            <li>
-              Researched and reviewed AI-driven predictive analytics in
-              healthcare, integrating insights into model design.
-            </li>
-            <li>
-              Presented findings at the end of the internship to a panel of
-              researchers.
-            </li>
-          </ul>
-        </div>
-      </section>
-    </section>
-
-    <!-- //  EDUCATION & CERTIFICATIONS  // -->
-    <section class="resume-section" id="education">
-      <h2>Education</h2>
-
-      <section class="education-item">
-        <h3>Master of Computing and Innovation</h3>
-        <p>University of Adelaide, Australia, 2023 - 2024</p>
-        <p>
-          GPA: 6.83/7
-        </p>
-        <p>
-          Courses completed: Computer Networks & Applications,
-          Introduction to Statistical Machine Learning, Computer Systems,
-          Operating Systems, Algorithm and Data Structure Algorithm Analysis,
-          Software Engineering and Project, Project Management Fundamentals
-        </p>
-      </section>
-
-      <section class="education-item">
-        <h3>Bachelor of Medicine, Bachelor of Surgery (MBBS)</h3>
-        <p>University of Malaya, Malaysia, 2009 - 2014</p>
-      </section>
-    </section>
-  </main>
-
-  <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
-  <footer>
-    <a href="index.html">Back to homepage</a>
-    <p>
-      © 2025 by Yong Kheng Beh |
-      <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a>
-    </p>
-    <ul class="socials">
-      <li>
-        <a href="https://www.linkedin.com/in/yong-kheng-beh" target="_blank"><img src="images/icon-logo-linkedin.png"
-            alt="LinkedIn" /></a>
-      </li>
-      <li>
-        <a href="https://github.com/Kheng2023" target="_blank"><img src="images/icon-logo-github.png"
-            alt="GitHub" /></a>
-      </li>
-    </ul>
-  </footer>
-</body>
-
+      <p>
+        © <span id="year">2025</span> by Yong Kheng Beh |
+        <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a>
+      </p>
+      <ul class="socials">
+        <li>
+          <a href="https://www.linkedin.com/in/yong-kheng-beh" target="_blank"
+            ><img src="images/icon-logo-linkedin.png" alt="LinkedIn"
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/Kheng2023" target="_blank"
+            ><img src="images/icon-logo-github.png" alt="GitHub"
+          /></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
