@@ -102,7 +102,7 @@ footer a:hover {
 
 .content-wrapper {
   margin: 0 auto;
-  padding: 30px;
+  padding: 15px 30px;
   max-width: 900px;
 }
 
@@ -225,32 +225,6 @@ footer a:hover {
   margin: 30px 0;
 }
 
-.work-details p {
-  margin: 0;
-}
-
-@media screen and (min-width: 860px) {
-  .work-item {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    column-gap: 20px;
-  }
-
-  .work-summary p:first-child {
-    margin-top: 0;
-  }
-}
-
-/* Education
--------------------------------------------*/
-.education-item {
-  margin: 30px 0;
-}
-
-.education-item p {
-  margin: 0;
-}
-
 /* FOOTER
 -------------------------------------------*/
 footer {
@@ -295,7 +269,7 @@ body.resume {
 /* Hero section */
 .hero {
   background: url("../images/bg-hero-dark-blue.png") no-repeat center center;
-  padding: 3em 0 2em 0;
+  padding: 3em 2em 2em 2em;
   text-align: center;
   box-shadow: 0 4px 24px rgba(25, 118, 210, 0.1);
   margin-bottom: 2em;
@@ -414,18 +388,44 @@ body.resume {
 
 /* Sticky Navigation Bar */
 #resume-nav {
-  position: sticky;
+  /* Use fixed positioning so the nav remains visible across browsers/devices */
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   background-color: #ffffff;
-  padding: 15px 0;
+  padding: 10px 0;
   border-bottom: 2px solid #00335c;
-  z-index: 1000; /* Ensures it stays on top of other content */
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* keep the inner nav contents constrained and centered */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  display: inline-block;
 }
 
 #resume-nav a {
-  margin: 0 15px;
+  display: inline-block;
+  padding: 6px 8px;
+  margin: 0;
   text-decoration: none;
   color: #00335c;
   font-size: 1.5rem;
@@ -436,29 +436,79 @@ body.resume {
   border-bottom: 2px solid #ff4500;
 }
 
+/* Small-screen adjustments: reduce spacing and keep nav sticky */
+@media screen and (max-width: 480px) {
+  #resume-nav {
+    padding: 8px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+
+  .main-nav ul {
+    gap: 1rem;
+  }
+
+  #resume-nav a {
+    font-size: 1.4rem;
+    padding: 6px 6px;
+  }
+}
+
+/* When the nav is fixed we need to add top padding so the page content
+   doesn't sit underneath it. This targets the resume page specifically. */
+.resume .content-wrapper {
+  /* Keep a small top offset so fixed nav doesn't overlap content.
+     Reduced from 8rem because the header::before image already adds height. */
+  padding-top: 2.4rem; /* ~24px */
+}
+
 /* Accordion Styles */
+
+.work-item {
+  position: relative;
+}
+
 .work-item .work-details {
   cursor: pointer; /* Changes mouse to a pointer hand */
   position: relative;
+  padding-right: 0; /* toggle lives inside details now */
+  display: flex;
+  flex-direction: column;
 }
 
 .work-item .work-details:hover h3 {
   color: #ff4500; /* Highlight color on hover */
 }
 
-/* Add a visual cue (a plus sign) */
-.work-item .work-details::after {
-  content: "expand +";
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 1.5rem;
-  color: #00335c;
+.work-item .work-details p {
+  margin: 0;
 }
 
-/* When expanded, change plus to minus */
-.work-item.expanded .work-details::after {
-  content: "hide -";
+/* Toggle button placed inline inside the details block (right-aligned) */
+.work-toggle {
+  position: static;
+  align-self: flex-start; /* align left under the dates */
+  background: none;
+  border: none;
+  color: #00335c;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 2px 0px;
+  margin-top: 0.4rem;
+  margin-left: 0;
+}
+
+.work-toggle:focus {
+  outline: 3px solid rgba(102, 178, 224, 0.25);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 480px) {
+  .work-toggle {
+    align-self: flex-start; /* keep left alignment on small screens */
+    font-size: 1.15rem;
+    margin-top: 0.25rem;
+    padding: 5px 6px;
+  }
 }
 
 /* By default, hide the summary */
@@ -471,6 +521,8 @@ body.resume {
 /* When the parent has the 'expanded' class, show the summary */
 .work-item.expanded .work-summary {
   display: block;
+  margin-top: 10px;
+  border-top: 1px dashed navy;
 }
 
 /* Simple fade-in animation */

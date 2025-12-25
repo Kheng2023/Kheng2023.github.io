@@ -20,42 +20,6 @@ if (greetingElement) {
   greetingElement.textContent = greetingText;
 }
 
-// --- 1. Auto-Generated Sticky Navigation ---
-function generateResumeNav() {
-  // Check if we are on the resume page by looking for the 'resume-section' class
-  // If not, stop the function so we don't cause errors on other pages
-  if (!document.querySelector(".resume-section")) return;
-
-  // Create the nav element
-  const nav = document.createElement("nav");
-  nav.id = "resume-nav";
-
-  // Find all sections with an ID (Profile, Projects, etc.)
-  const sections = document.querySelectorAll("section.resume-section[id]");
-
-  // Loop through each section to create a link
-  sections.forEach((section) => {
-    // Get the ID (e.g., "work-experience") and the Title (e.g., "Work Experience")
-    const sectionId = section.id;
-    const sectionTitle = section.querySelector("h2").textContent;
-
-    // Create the link
-    const link = document.createElement("a");
-    link.href = `#${sectionId}`;
-    link.textContent = sectionTitle;
-
-    // Add link to the nav bar
-    nav.appendChild(link);
-  });
-
-  // Insert the nav bar right after the header (before the main content)
-  const header = document.querySelector("header");
-  header.parentNode.insertBefore(nav, header.nextSibling);
-}
-
-// Run the function
-generateResumeNav();
-
 // --- 2. Work Experience Accordion ---
 function setupAccordions() {
   // Find all work items
@@ -65,11 +29,39 @@ function setupAccordions() {
     // Find the "header" (the details part)
     const header = item.querySelector(".work-details");
 
-    // Add a click listener
-    header.addEventListener("click", () => {
-      // Toggle the 'expanded' class on the parent item
-      item.classList.toggle("expanded");
-    });
+    // Find the visible toggle button (we add it next to the details)
+    const toggle = item.querySelector(".work-toggle");
+
+    function updateToggle() {
+      if (!toggle) return;
+      if (item.classList.contains("expanded")) {
+        toggle.textContent = "hide -";
+        toggle.setAttribute("aria-expanded", "true");
+      } else {
+        toggle.textContent = "click to expand +";
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    // Add a click listener to the header to toggle
+    if (header) {
+      header.addEventListener("click", () => {
+        item.classList.toggle("expanded");
+        updateToggle();
+      });
+    }
+
+    // Add a click listener to the explicit toggle button
+    if (toggle) {
+      toggle.addEventListener("click", (e) => {
+        // Prevent the click from also triggering the header listener
+        e.stopPropagation();
+        item.classList.toggle("expanded");
+        updateToggle();
+      });
+      // set initial state
+      updateToggle();
+    }
   });
 }
 
