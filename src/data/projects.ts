@@ -36,11 +36,10 @@ export const projects: Project[] = [
       'A personal learning diary documenting my journey solving LeetCode problems — covering algorithms, data structures, and problem-solving patterns with explanations and video walkthroughs.',
     image: '/images/project-leetcode-500px.jpg',
     tags: ['Python', 'Algorithms', 'Data Structures', 'OOP'],
-    liveUrl: '/leetcode-diary/main.html',
+    liveUrl: 'https://kheng2023.github.io/leetcode-diary/',
     liveLabel: 'Read Diary',
-    githubUrl:
-      'https://www.youtube.com/playlist?list=PLMZO6MTU0gffRlGMo_aY1Rpbb1u3suu-C',
-    githubLabel: 'YouTube',
+    githubUrl: 'https://github.com/Kheng2023/leetcode-diary',
+    githubLabel: 'GitHub',
   },
   {
     title: 'Priority Matrix',
