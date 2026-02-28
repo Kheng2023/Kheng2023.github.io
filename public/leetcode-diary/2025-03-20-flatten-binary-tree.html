@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>114. Flatten Binary Tree to Linked List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka:wght@300..700&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>114. Flatten Binary Tree to Linked List</h1>
+      <p>Posted on: 2025-03-20</p>
+    </header>
+    <main>
+      <p>
+        Today, I managed to solve a LeetCode medium problem (partially) by
+        myself! I wasn’t very confident at first, but I just followed my thought
+        process and worked through it.
+      </p>
+
+      <h2>Understanding the Problem</h2>
+      <p>
+        The question was to modify a binary tree so that it becomes a linked
+        list, following a pre-order traversal order. Since I was focusing on DFS
+        questions this week, I initially thought, “Isn’t DFS an in-order
+        traversal?” Instead of fixating on DFS, I decided to logically break
+        down the problem.
+      </p>
+
+      <h2>Initial Thought Process</h2>
+      <ol>
+        <li>
+          We want to move all left branches to the right, positioning them
+          before the right branch.
+        </li>
+        <li>
+          To achieve this, we temporarily store the right branch, move the left
+          subtree to the right, then append the original right subtree at the
+          rightmost node of the new right branch.
+        </li>
+        <li>Repeat the process recursively.</li>
+      </ol>
+
+      <h2>My Recursive Solution</h2>
+      <pre><code class="language-python">class Solution:
+    def flatten(self, root: Optional[TreeNode]) -> None:
+        """
+        Do not return anything, modify root in-place instead.
+        """
+        if not root:
+            return None
+        current = root
+        if current.left: 
+            current = current.left
+            temp = root.right  # Placeholder for the original right subtree
+            root.right = current  # Move left subtree to the right
+            root.left = None  # Remove left link
+            while current.right:
+                current = current.right  # Traverse to the rightmost node
+            current.right = temp  # Append the original right subtree
+
+        self.flatten(root.right)</code></pre>
+
+      <h2>Space Complexity Issue</h2>
+      <p>
+        My solution used recursion, which requires
+        <code>O(n)</code> additional space due to the depth of recursion.
+        However, the problem specifically required <code>O(1)</code> additional
+        space.
+      </p>
+
+      <h2>Optimized Iterative Solution</h2>
+      <p>
+        After looking at the solution, I realized my approach wasn’t far off.
+        Instead of using a placeholder, the optimised solution directly appends
+        the right subtree to the rightmost node of the left subtree, then moves
+        the left subtree to the right and continues traversing.
+      </p>
+
+      <pre><code class="language-python">class Solution:
+    def flatten(self, root: Optional[TreeNode]) -> None:
+        """
+        Do not return anything, modify root in-place instead.
+        """
+        current = root
+
+        while current:
+            # If there's a left subtree, move it to the right
+            if current.left:
+                check = current.left
+                while check.right:
+                    check = check.right  # Find the rightmost node of left subtree
+                check.right = current.right  # Attach original right subtree
+
+                # Move left subtree to the right
+                current.right = current.left
+                current.left = None
+
+            # Move to the next node on the right
+            current = current.right</code></pre>
+
+      <h2>Final Thoughts</h2>
+      <p>I explained this problem in more detail in my YouTube video:</p>
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Awj3Cwuh41w"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
+      <p>
+        I'm just grateful that I was able to solve a LeetCode problem today—it
+        means progress! See you all next time!
+      </p>
+
+      <div class="btn-container">
+        <a class="btn" href="2025-03-20-word-search.html">Previous</a>
+        <a class="btn" href="main.html">Next</a>
+      </div>
+      <nav>
+        <a href="main.html">Back to Leetcode Diary</a>
+      </nav>
+    </main>
+    <footer>
+      <p><a href="../index.html">Back to homepage</a></p>
+      <p></p>
+      <p>
+        © 2025 by Yong Kheng Beh |
+        <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a>
+      </p>
+      <ul class="socials">
+        <li>
+          <a href="www.linkedin.com/in/yong-kheng-beh" target="_blank"
+            ><img src="../images/icon-logo-linkedin.png" alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/Kheng2023" target="_blank"
+            ><img src="../images/icon-logo-github.png" alt=""
+          /></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  </body>
+</html>

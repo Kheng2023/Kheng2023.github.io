@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build output (GitHub Actions builds this on the server)
+dist/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Editor
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db

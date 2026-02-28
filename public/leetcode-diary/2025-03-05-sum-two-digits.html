@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>371. Sum of Two Integers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka:wght@300..700&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>371. Sum of Two Integers</h1>
+      <p>Posted on: 5/March/2025</p>
+    </header>
+    <main>
+      <p>
+        Today's LeetCode question was an interesting one—perform addition
+        <strong>without using the + or - operator.</strong>
+      </p>
+
+      <p>
+        At first, I was completely stunned. What kind of question is this? And
+        worse, what if this comes up in an interview? I had a gut feeling it had
+        something to do with <strong>bit manipulation</strong>, and sure enough,
+        that was the topic tagged in the problem. But I had no clue where to
+        start—I had completely forgotten how adders work in Computer Systems.
+      </p>
+
+      <h2>Initial Thoughts</h2>
+      <p>
+        Looking through the discussions, I saw some people using
+        <code>sum([a, b])</code>, which felt almost too straightforward. But I
+        still wanted to attempt the bit manipulation approach, so I referred
+        back to my old <em>Computer Systems</em> coursework, where I wrote about
+        <strong>half-adders, full-adders, and 16-bit adders.</strong>
+      </p>
+
+      <h2>Understanding Adders</h2>
+      <p>Here are some relevant images from my previous coursework:</p>
+      <ul>
+        <li>
+          Half-adder: <br />
+          <img src="images/halfadder.png" alt="Half-adder" />
+        </li>
+        <li>
+          Full-adder: <br />
+          <img src="images/fulladder.png" alt="Full-adder" />
+        </li>
+        <li>
+          16-bit adder: <br />
+          <img src="images/16-bit-adder.png" alt="16-bit adder" />
+        </li>
+      </ul>
+
+      <p>From these, I recalled that:</p>
+      <ul>
+        <li><code>xor</code> is used for addition.</li>
+        <li><code>and</code> is used to determine the carry.</li>
+        <li>A full-adder is made of two half-adders and an OR gate.</li>
+        <li>16-bit adders are made of 16 full-adders.</li>
+      </ul>
+
+      <p>
+        With this in mind, I realized the solution must involve
+        <strong>repeatedly applying XOR and AND</strong> to simulate addition.
+      </p>
+
+      <h2>Breaking Down the Approach</h2>
+      <p>
+        In Python, working with binary numbers bit by bit was tricky. Using
+        <code>bin(a)</code> wasn’t the solution, since it converts numbers to
+        strings.
+      </p>
+
+      <p>
+        After some trial and error (and checking the solution page 😅), I found
+        that the approach was actually quite simple:
+      </p>
+      <ol>
+        <li>Use <code>xor</code> to add the numbers without carrying.</li>
+        <li>Use <code>and</code> to find the carry and shift it left.</li>
+        <li>Repeat until there are no more carries.</li>
+      </ol>
+
+      <p>
+        The issue in Python is that numbers can exceed 32 bits, causing the
+        carry to keep shifting indefinitely. To prevent this, we apply a
+        <strong>mask</strong> to keep the result within a fixed bit size (12
+        bits in this case).
+      </p>
+
+      <h2>Final Solution</h2>
+      <pre><code class="language-python">class Solution:
+    def getSum(self, a: int, b: int) -> int:
+        # Perform addition using XOR and recursively shift the carry
+        mask = 0b111111111111  # 12-bit mask (sufficient for range -1000 to 1000)
+        MAX = 0b011111111111   # Max positive number within 12 bits
+
+        if b == 0:
+            return a if a <= MAX else ~(a ^ mask)
+
+        return self.getSum((a ^ b) & mask, ((a & b) << 1) & mask)</code></pre>
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Honestly, I can only hope I <strong>never</strong> get this question in
+        an interview. But at least now I understand the concept and can explain
+        it if needed. Or I can just use <code>sum([a, b])</code> and hope the
+        interviewer doesn’t mind. 😆
+      </p>
+
+      <p><strong>Until next time!</strong></p>
+
+      <div class="btn-container">
+        <a class="btn" href="2025-03-03-robber.html">Prev</a>
+        <a class="btn" href="2025-03-17-reorganising-thoughts.html">Next</a>
+      </div>
+      <nav>
+        <a href="main.html">Back to Leetcode Diary</a>
+      </nav>
+    </main>
+    <footer>
+      <p><a href="../index.html">Back to homepage</a></p>
+      <p></p>
+      <p>
+        © 2025 by Yong Kheng Beh |
+        <a href="mailto:yongkhengbeh@gmail.com">yongkhengbeh@gmail.com</a>
+      </p>
+      <ul class="socials">
+        <li>
+          <a href="www.linkedin.com/in/yong-kheng-beh" target="_blank"
+            ><img src="../images/icon-logo-linkedin.png" alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/Kheng2023" target="_blank"
+            ><img src="../images/icon-logo-github.png" alt=""
+          /></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  </body>
+</html>
