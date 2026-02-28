@@ -1,12 +1,42 @@
-# Personal Website  
+# kheng2023.github.io — Personal Portfolio
 
-This is a personal website I created while following the LinkedIn Learning course:  
-[CSS Essential Training](https://www.linkedin.com/learning/certificates/88ab25b4dd43d52ae6b5b0fd26b7d72fe0652917f15b990d33379630274afd32?trk=share_certificate).  
+Live site: **https://kheng2023.github.io**
 
-## Project Overview  
+Personal portfolio for Yong Kheng Beh — software developer and career-changer from medicine.
 
-Currently, the website consists of two pages:  
-- **index.html** – The main landing page  
-- **resume.html** – A simple resume page  
+## Stack
 
-I plan to add more improvements as I continue learning and developing my skills.  
+- **Vite 5** + **React 18** + **TypeScript 5.5**
+- **MUI v6** — dark-mode only
+- **Framer Motion v11** — scroll-reveal animations, spring physics
+- **Canvas 2D** — lightweight animated particle network background (no Three.js)
+- **GitHub Actions** — auto-deploys to GitHub Pages on every push to `main`
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/        # NavBar, Footer
+│   ├── sections/      # Hero, About, Projects, Experience, Education, DoctorCareer
+│   └── ui/            # ProjectCard, SectionWrapper, ThreeBackground (Canvas 2D)
+├── data/              # projects.ts, experience.ts, education.ts
+├── theme/             # MUI dark theme
+├── App.tsx
+└── main.tsx
+public/images/         # Static assets
+.github/workflows/     # deploy.yml — GitHub Actions Pages deploy
+_archive/              # Old vanilla HTML/CSS/JS site (kept for reference)
+```
+
+## Development
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build → dist/
+```
+
+## Deploy
+
+Push to `main` — GitHub Actions builds and deploys automatically.
