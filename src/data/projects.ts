@@ -53,14 +53,14 @@ export const projects: Project[] = [
     githubLabel: 'GitHub',
   },
   {
-    title: 'Priority Matrix',
+    title: 'Parachute Flower',
     description:
-      'A web-based priority matrix tool inspired by "What Color Is Your Parachute?" — helps users compare and rank up to 10 items to discover personal priorities. Built with React and GitHub Copilot.',
+      'A web app for the Flower Exercise from "What Color Is Your Parachute?" — explore 7 career dimensions using pairwise comparisons, then generate a printable SVG flower diagram of your priorities. Auto-saves to localStorage.',
     image: '/images/project-priority-matrix-500px.jpg',
-    tags: ['React', 'JavaScript', 'GitHub Copilot', 'UI/UX'],
-    liveUrl: 'https://kheng2023.github.io/priority-matrix/',
+    tags: ['React', 'JavaScript', 'Vite', 'SVG', 'GitHub Copilot'],
+    liveUrl: 'https://kheng2023.github.io/parachute-flower/',
     liveLabel: 'Live Demo',
-    githubUrl: 'https://github.com/Kheng2023/priority-matrix',
+    githubUrl: 'https://github.com/Kheng2023/parachute-flower',
     githubLabel: 'GitHub',
   },
 ]
