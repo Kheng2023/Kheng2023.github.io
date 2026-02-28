@@ -11,6 +11,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: '12 Week Year Tracker',
+    description:
+      'A privacy-first PWA for goal tracking based on The 12 Week Year — define 12-week cycles with goals and weekly tactics, score your execution on a weekly scorecard, and review progress with interactive charts. All data stays in your browser via SQLite/WASM.',
+    image: '/images/project-12-week-year-500px.jpg',
+    tags: ['React', 'TypeScript', 'MUI', 'SQLite', 'PWA', 'Recharts'],
+    liveUrl: 'https://kheng2023.github.io/12-week-year/',
+    liveLabel: 'Live Demo',
+    githubUrl: 'https://github.com/Kheng2023/12-week-year',
+    githubLabel: 'GitHub',
+  },
+  {
     title: 'SACommunity Chatbot',
     description:
       'AI-powered chatbot using Retrieval-Augmented Generation (RAG) to enhance search across a not-for-profit community directory with 14,000+ records. Integrates LangChain, Flask, and Docker.',
