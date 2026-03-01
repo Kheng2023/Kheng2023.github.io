@@ -30,7 +30,7 @@ export default function About() {
                 over eight years practicing medicine
               </Box>{' '}
               — rotating through emergency and surgery, performing C-sections and ultrasounds at Penang
-              General Hospital, then running my own GP clinic — I made the leap into software
+              General Hospital, then running GP clinic — I made the leap into software
               development.
             </Typography>
             <Typography

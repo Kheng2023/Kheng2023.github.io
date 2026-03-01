@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Typography, Paper, Collapse, IconButton, Grid, Link } from '@mui/material'
+import { Box, Typography, Paper, Collapse, IconButton, Grid, Link, Tooltip } from '@mui/material'
 import { motion } from 'framer-motion'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices'
@@ -79,7 +79,13 @@ export default function DoctorCareer() {
   const toggle = (i: number) => setExpanded(prev => (prev === i ? null : i))
 
   return (
-    <SectionWrapper id="medical" title="Medical Career" subtitle="Eight years in medicine">
+    <SectionWrapper
+      id="medical"
+      title="Medical Career"
+      subtitle="Eight years in medicine"
+      tone="medical"
+      sx={{ bgcolor: 'rgba(96,108,56,0.1)' }}
+    >
       {/* Intro */}
       <motion.div variants={itemVariants}>
         <Typography
@@ -111,10 +117,7 @@ export default function DoctorCareer() {
             borderLeft: '4px solid',
             borderLeftColor: 'secondary.main',
             borderRadius: 3,
-            bgcolor: theme =>
-              theme.palette.mode === 'dark'
-                ? 'rgba(251,146,60,0.07)'
-                : 'rgba(249,115,22,0.05)',
+            bgcolor: 'rgba(96,108,56,0.12)',
           }}
         >
           <Typography
@@ -163,20 +166,61 @@ export default function DoctorCareer() {
           <motion.div key={role.role} variants={itemVariants}>
             <Box sx={{ position: 'relative', mb: 3 }}>
               {/* Dot */}
-              <Box
-                sx={{
-                  position: 'absolute',
-                  left: { xs: -23, md: -31 },
-                  top: 20,
-                  width: 12,
-                  height: 12,
-                  borderRadius: '50%',
-                  bgcolor: 'secondary.main',
-                  border: '2.5px solid',
-                  borderColor: 'background.default',
-                  zIndex: 1,
-                }}
-              />
+              {/* Pulsating clickable dot */}
+              <Tooltip
+                title={expanded === index ? 'Click to collapse' : 'Click to expand'}
+                placement="left"
+                arrow
+              >
+                <Box
+                  onClick={() => toggle(index)}
+                  sx={{
+                    position: 'absolute',
+                    left: { xs: -30, md: -38 },
+                    top: 16,
+                    width: 24,
+                    height: 24,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    zIndex: 2,
+                    '--dot-ring': 'rgba(27,67,50,0.6)',
+                    '--dot-core-collapsed': 'rgba(43,74,63,1)',
+                    '--dot-core-expanded': 'rgba(212,163,115,1)',
+                  }}
+                >
+                  {/* Pulse ring */}
+                  <motion.div
+                    animate={{ scale: [1, 1.9, 1], opacity: [0.55, 0, 0.55] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+                    style={{
+                      position: 'absolute',
+                      width: 18,
+                      height: 18,
+                      borderRadius: '50%',
+                      background: 'var(--dot-ring)',
+                    }}
+                  />
+                  {/* Solid core dot */}
+                  <motion.div
+                    whileHover={{ scale: 1.25 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+                    style={{
+                      width: 12,
+                      height: 12,
+                      borderRadius: '50%',
+                      background: expanded === index ? 'var(--dot-core-expanded)' : 'var(--dot-core-collapsed)',
+                      border: '2.5px solid white',
+                      boxShadow: '0 0 0 2px var(--dot-core-collapsed)',
+                      position: 'relative',
+                      zIndex: 1,
+                      flexShrink: 0,
+                    }}
+                  />
+                </Box>
+              </Tooltip>
 
               <Paper
                 elevation={0}

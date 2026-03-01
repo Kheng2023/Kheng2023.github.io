@@ -67,10 +67,7 @@ export default function Hero() {
         alignItems: 'center',
         pt: { xs: 10, md: 8 },
         pb: { xs: 6, md: 8 },
-        background: theme =>
-          theme.palette.mode === 'dark'
-            ? 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)'
-            : 'linear-gradient(135deg, #dbeafe 0%, #f8fafc 55%, #fff7ed 100%)',
+        background: 'linear-gradient(135deg, #F8F9FA 0%, #EAF3EE 100%)'
       }}
     >
       <Suspense fallback={null}>
@@ -180,7 +177,7 @@ export default function Hero() {
 
             <motion.div variants={textItem(0.58)} initial="hidden" animate="visible">
               <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap' }}>
-                {['Python', 'React', 'LangChain', 'Docker', 'Machine Learning'].map(skill => (
+                {['Python', 'React', 'LangChain', 'Firebase', 'Machine Learning'].map(skill => (
                   <Chip
                     key={skill}
                     label={skill}
@@ -214,9 +211,9 @@ export default function Hero() {
                   backdropFilter: 'blur(12px)',
                   WebkitBackdropFilter: 'blur(12px)',
                   background:
-                    'linear-gradient(135deg, rgba(148,197,253,0.38) 0%, rgba(96,165,250,0.12) 50%, rgba(251,146,60,0.22) 100%)',
+                    'linear-gradient(135deg, rgba(45,106,79,0.38) 0%, rgba(96,108,56,0.14) 52%, rgba(212,163,115,0.24) 100%)',
                   boxShadow:
-                    '0 24px 56px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(148,197,253,0.18), inset 0 1px 0 rgba(255,255,255,0.12)',
+                    '0 24px 56px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(45,106,79,0.2), inset 0 1px 0 rgba(255,255,255,0.12)',
                 }}
               >
                 {/* Image clipped to rounded-rect */}

@@ -8,6 +8,7 @@ interface SectionWrapperProps {
   subtitle?: string
   children: ReactNode
   tinted?: boolean
+  tone?: 'tech' | 'medical'
   sx?: SxProps<Theme>
 }
 
@@ -27,15 +28,24 @@ export default function SectionWrapper({
   subtitle,
   children,
   tinted = false,
+  tone = 'tech',
   sx,
 }: SectionWrapperProps) {
+  const headingColor = tone === 'medical' ? 'secondary.main' : 'primary.main'
+  const sectionBackground =
+    tinted
+      ? tone === 'medical'
+        ? 'rgba(96,108,56,0.08)'
+        : 'rgba(27,67,50,0.05)'
+      : 'background.default'
+
   return (
     <Box
       id={id}
       component="section"
       sx={{
         py: { xs: 8, md: 10 },
-        bgcolor: tinted ? 'action.hover' : 'background.default',
+        bgcolor: sectionBackground,
         ...sx,
       }}
     >
@@ -51,7 +61,7 @@ export default function SectionWrapper({
               <Typography
                 variant="overline"
                 sx={{
-                  color: 'secondary.main',
+                  color: headingColor,
                   fontWeight: 700,
                   letterSpacing: 2.5,
                   fontSize: '0.7rem',
@@ -77,7 +87,7 @@ export default function SectionWrapper({
                   mt: 2,
                   width: 56,
                   borderWidth: 3,
-                  borderColor: 'primary.main',
+                  borderColor: 'warning.main',
                   borderRadius: 2,
                 }}
               />

@@ -5,8 +5,8 @@ import { Box } from '@mui/material'
 const isMobile = () => window.innerWidth < 768
 
 // Particle colours (dark-mode only)
-const CORE_COLOR  = '#93c5fd'   // bright star dot
-const GLOW_COLOR  = '#3b82f6'   // shadow bloom
+const CORE_COLOR  = '#A3B18A'   // bright star dot
+const GLOW_COLOR  = '#1B4332'   // shadow bloom
 
 export default function ThreeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -66,7 +66,7 @@ export default function ThreeBackground() {
       // Outer glow
       ctx.beginPath()
       ctx.arc(x, y, 6, 0, Math.PI * 2)
-      ctx.fillStyle = 'rgba(59,130,246,0.08)'
+      ctx.fillStyle = 'rgba(27,67,50,0.09)'
       ctx.fill()
       // Bright core
       ctx.beginPath()
@@ -102,7 +102,7 @@ export default function ThreeBackground() {
               ctx.beginPath()
               ctx.moveTo(particles[i].x + ox, particles[i].y + oy)
               ctx.lineTo(particles[j].x + ox, particles[j].y + oy)
-              ctx.strokeStyle = `rgba(96,165,250,${alpha})`
+              ctx.strokeStyle = `rgba(96,108,56,${alpha})`
               ctx.lineWidth = 0.8
               ctx.stroke()
             }

@@ -54,7 +54,7 @@ export default function NavBar() {
         position="fixed"
         elevation={scrolled ? 1 : 0}
         sx={{
-          bgcolor: scrolled ? 'rgba(15,23,42,0.92)' : 'transparent',
+          bgcolor: scrolled ? 'rgba(248,249,250,0.92)' : 'transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           borderBottom: scrolled ? '1px solid' : 'none',
           borderColor: 'divider',

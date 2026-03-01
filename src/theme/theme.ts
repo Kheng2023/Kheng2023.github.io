@@ -1,4 +1,4 @@
-import { createTheme, type PaletteMode } from '@mui/material'
+import { createTheme} from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -38,31 +38,41 @@ const sharedTypography = {
   },
 }
 
-export function getTheme(mode: PaletteMode) {
+export function getTheme() {
   return createTheme({
-    palette: {
-      mode,
-      primary: {
-        main: mode === 'light' ? '#1e40af' : '#60a5fa',
-        dark: mode === 'light' ? '#1e3a5f' : '#3b82f6',
-        light: mode === 'light' ? '#3b82f6' : '#93c5fd',
-        contrastText: '#ffffff',
+      palette: {
+        mode: 'light',
+        primary: {
+          main: '#1B4332',
+          light: '#2D6A4F',
+          dark: '#0D281F',
+          contrastText: '#ffffff',
+        },
+        secondary: {
+          main: '#606C38',
+          light: '#7B8654',
+          dark: '#4C5A2D',
+          contrastText: '#ffffff',
+        },
+        warning: {
+          main: '#D4A373',
+          light: '#E7C6A0',
+          dark: '#B88A62',
+          contrastText: '#1B4332',
+        },
+        background: {
+          default: '#F8F9FA',
+          paper: '#FFFFFF',
+        },
+        text: {
+          primary: '#1F2937',
+          secondary: '#4B5563',
+        },
+        divider: '#D5DFD8',
+        action: {
+          hover: 'rgba(27,67,50,0.05)',
+        },
       },
-      secondary: {
-        main: mode === 'light' ? '#f97316' : '#fb923c',
-        light: mode === 'light' ? '#fdba74' : '#fed7aa',
-        contrastText: '#ffffff',
-      },
-      background: {
-        default: mode === 'light' ? '#f8fafc' : '#0f172a',
-        paper: mode === 'light' ? '#ffffff' : '#1e293b',
-      },
-      text: {
-        primary: mode === 'light' ? '#1e293b' : '#f1f5f9',
-        secondary: mode === 'light' ? '#64748b' : '#94a3b8',
-      },
-      divider: mode === 'light' ? '#e2e8f0' : '#334155',
-    },
     typography: sharedTypography,
     shape: { borderRadius: 12 },
     components: {

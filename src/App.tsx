@@ -11,7 +11,7 @@ import Education from './components/sections/Education'
 import DoctorCareer from './components/sections/DoctorCareer'
 
 function App() {
-  const theme = useMemo(() => getTheme('dark'), [])
+  const theme = useMemo(() => getTheme(), [])
 
   return (
     <ThemeProvider theme={theme}>

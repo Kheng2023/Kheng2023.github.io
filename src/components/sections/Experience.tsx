@@ -55,6 +55,9 @@ export default function Experience() {
                     justifyContent: 'center',
                     cursor: 'pointer',
                     zIndex: 2,
+                    '--dot-ring': 'rgba(27,67,50,0.6)',
+                    '--dot-core-collapsed': 'rgba(43,74,63,1)',
+                    '--dot-core-expanded': 'rgba(212,163,115,1)',
                   }}
                 >
                   {/* Pulse ring */}
@@ -66,7 +69,7 @@ export default function Experience() {
                       width: 18,
                       height: 18,
                       borderRadius: '50%',
-                      background: '#3b82f6',
+                      background: 'var(--dot-ring)',
                     }}
                   />
                   {/* Solid core dot */}
@@ -78,9 +81,9 @@ export default function Experience() {
                       width: 12,
                       height: 12,
                       borderRadius: '50%',
-                      background: expanded === index ? '#f97316' : '#1e40af',
+                      background: expanded === index ? 'var(--dot-core-expanded)' : 'var(--dot-core-collapsed)',
                       border: '2.5px solid white',
-                      boxShadow: '0 0 0 2px #1e40af',
+                      boxShadow: '0 0 0 2px var(--dot-core-collapsed)',
                       position: 'relative',
                       zIndex: 1,
                       flexShrink: 0,
