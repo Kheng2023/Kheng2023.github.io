@@ -4,6 +4,7 @@ export interface EducationItem {
   period: string
   gpa?: string
   courses?: string[]
+  coursesLabel?: string
 }
 
 export const education: EducationItem[] = [
@@ -26,5 +27,18 @@ export const education: EducationItem[] = [
     degree: 'Bachelor of Medicine, Bachelor of Surgery (MBBS)',
     institution: 'University of Malaya, Malaysia',
     period: '2009 – 2014',
+  },
+  {
+    degree: 'Google UX Design Professional Certificate',
+    institution: 'Google · Coursera',
+    period: 'Jun 2026 – In progress',
+    coursesLabel: 'Completed so far · course 6 in progress',
+    courses: [
+      'Foundations of User Experience (UX) Design',
+      'Start the UX Design Process: Empathize, Define, and Ideate',
+      'Build Wireframes and Low-Fidelity Prototypes',
+      'Conduct UX Research and Test Early Concepts',
+      'Create High-Fidelity Designs and Prototypes in Figma',
+    ],
   },
 ]

@@ -11,6 +11,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Talk: How I Navigate Agentic Coding as a Junior Software Engineer in a Startup',
+    description:
+      'My talk at the Adelaide Claude Code Meetup (Stone & Chalk, August 2026) — how far I trust AI, the workflow, audits and tools I use to keep a codebase clean, and where the human stays in the loop. The slides are rebuilt as a dependency-free HTML/CSS/JS deck.',
+    image: '/images/project-agentic-coding-talk.webp',
+    tags: ['Public Speaking', 'Claude Code', 'Agentic Coding', 'HTML', 'CSS', 'JavaScript'],
+    liveUrl: 'https://kheng2023.github.io/how-i-navigate-agentic-coding/',
+    liveLabel: 'View Slides',
+    githubUrl: 'https://github.com/Kheng2023/how-i-navigate-agentic-coding',
+    githubLabel: 'GitHub',
+  },
+  {
     title: '12 Week Year Tracker',
     description:
       'A privacy-first PWA for goal tracking based on The 12 Week Year — define 12-week cycles with goals and weekly tactics, score your execution on a weekly scorecard, and review progress with interactive charts. All data stays in your browser via SQLite/WASM.',
@@ -36,27 +47,16 @@ export const projects: Project[] = [
     title: 'Drupal Migration Guides Blog',
     description:
       'Technical blog documenting the Drupal 11 migration of SAcommunity.org — covering site migration strategies, ETL processes, and lessons learned along the way.',
-    image: '/images/project-drupal-migration-blog-500px.jpg',
+    image: '/images/project-drupal-migration-blog.webp',
     tags: ['Drupal 11', 'PHP', 'MySQL', 'Jekyll', 'Technical Writing'],
     liveUrl: 'https://kheng2023.github.io/Drupal-Migration-Blog/',
     liveLabel: 'Visit Blog',
   },
   {
-    title: 'LeetCode Diary',
-    description:
-      'A personal learning diary documenting my journey solving LeetCode problems — covering algorithms, data structures, and problem-solving patterns with explanations and video walkthroughs.',
-    image: '/images/project-leetcode-500px.jpg',
-    tags: ['Python', 'Algorithms', 'Data Structures', 'OOP'],
-    liveUrl: 'https://kheng2023.github.io/leetcode-diary/',
-    liveLabel: 'Read Diary',
-    githubUrl: 'https://github.com/Kheng2023/leetcode-diary',
-    githubLabel: 'GitHub',
-  },
-  {
     title: 'Parachute Flower',
     description:
       'A web app for the Flower Exercise from "What Color Is Your Parachute?" — explore 7 career dimensions using pairwise comparisons, then generate a printable SVG flower diagram of your priorities. Auto-saves to localStorage.',
-    image: '/images/project-priority-matrix-500px.jpg',
+    image: '/images/project-parachute-flower.webp',
     tags: ['React', 'JavaScript', 'Vite', 'SVG', 'GitHub Copilot'],
     liveUrl: 'https://kheng2023.github.io/parachute-flower/',
     liveLabel: 'Live Demo',

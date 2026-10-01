@@ -7,7 +7,7 @@ import { education } from '../../data/education'
 
 export default function Education() {
   return (
-    <SectionWrapper id="education" title="Education" subtitle="Academic background" tinted>
+    <SectionWrapper id="education" title="Education" subtitle="Degrees and ongoing study" tinted>
       <Grid container spacing={3}>
         {education.map(edu => (
           <Grid item xs={12} md={6} key={edu.degree}>
@@ -68,7 +68,7 @@ export default function Education() {
                         fontSize: '0.65rem',
                       }}
                     >
-                      Courses
+                      {edu.coursesLabel ?? 'Courses'}
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
                       {edu.courses.map(c => (

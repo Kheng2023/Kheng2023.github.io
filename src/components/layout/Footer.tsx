@@ -41,7 +41,7 @@ export default function Footer() {
                 Yong Kheng Beh
               </Typography>
               <Typography variant="caption" color="text.secondary">
-                © {new Date().getFullYear()} · Software Developer & Doctor
+                © {new Date().getFullYear()} · Software Engineer & Doctor
               </Typography>
             </Box>
 

@@ -10,6 +10,40 @@ export interface WorkItem {
 
 export const experiences: WorkItem[] = [
   {
+    role: 'Software Engineer',
+    company: 'Vocare Speech Australia',
+    location: 'Adelaide, South Australia',
+    period: 'Mar 2026 – Present',
+    summary:
+      "Sole engineer on Vocare's production pronunciation-training platform. Handed the new platform (V2) as a just-finished intern, I took it over from an external team's early foundation, completed the migration from Firebase to Supabase and Vercel, took it live, and rebuilt the company website.",
+    skills: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Vercel', 'MUI', 'Vitest', 'Playwright', 'Claude Code'],
+    achievements: [
+      "Platform Migration: Took over the V2 platform from an external team's early foundation and delivered the migration of the production app from Firebase (Firestore, Cloud Functions, Hosting) to Next.js, Supabase (Postgres) and Vercel as the sole engineer. V2 is now live for users and the Firebase version has been retired.",
+      'Website Redevelopment: Designed and built the new vocare.com.au on my own, replacing a single static HTML page with a Next.js, React and TypeScript site on Vercel, backed by unit and end-to-end tests.',
+      'Production Ownership: Own the platform end to end — features, database schema changes, CI, error monitoring, and dependency security patches.',
+      'Accessibility: Remediated the marketing site against WCAG 2.2 AA across theme, navigation, motion and forms.',
+      'Agentic Engineering: Deliver full-stack work solo with Claude Code inside a disciplined workflow of tests, reviews and codebase audits — the subject of my talk at the Adelaide Claude Code Meetup.',
+    ],
+  },
+  {
+    role: 'Volunteer Developer – SAcommunity.org Rebuild',
+    company: 'Connecting Up / Infoxchange',
+    location: 'Adelaide, South Australia',
+    period: 'Jan 2025 – Present',
+    summary:
+      'Rebuilding SAcommunity.org, a South Australian community directory, in Drupal 11. Started in a cross-functional volunteer team, then returned in March 2026 to finish the rebuild on my own; the not-for-profit has seen the demo and wants to publish it. Infoxchange CEO Award – Volunteer of the Year 2026.',
+    skills: ['Drupal 11', 'PHP', 'MySQL', 'Docker', 'Python', 'ETL', 'Claude Code'],
+    achievements: [
+      'Recognition: Awarded the Infoxchange CEO Award – Volunteer of the Year (August 2026).',
+      'Solo Rebuild: Returned in March 2026 and rebuilt the site on a clean Drupal 11 codebase on my own, including a redesign of the website.',
+      'Streamlined Migration: Combined the data-cleansing Python scripts and Drupal Migration YAML into one streamlined, repeatable migration process.',
+      'Stakeholder Demo: Demoed the rebuilt site to the not-for-profit, who now want to publish it.',
+      'Gathered and analysed requirements in collaboration with the Directory Manager and Connecting Up leadership to guide redevelopment priorities.',
+      'Created detailed, step-by-step onboarding guides in GitHub and maintained a GitHub Project Kanban board to coordinate the volunteer team.',
+      'Leveraged LLMs (Gemini) to transform unstructured data into structured formats for database integration.',
+    ],
+  },
+  {
     role: 'Software Engineer Intern',
     company: 'Vocare Speech Australia',
     location: 'Adelaide, South Australia',
@@ -29,14 +63,14 @@ export const experiences: WorkItem[] = [
     role: 'Research Assistant',
     company: 'Corcillum',
     location: 'Adelaide, South Australia',
-    period: 'Oct 2025 – Present',
+    period: 'Oct 2025 – Feb 2026',
     summary:
-      'Annotating coronary angiogram images leveraging medical background to ensure accurate, clinically reliable data for machine learning model training.',
+      'Annotated coronary angiogram images, leveraging medical background to ensure accurate, clinically reliable data for machine learning model training.',
     skills: ['Medical Image Annotation', 'Data Quality Assurance', 'Team Collaboration'],
     achievements: [
-      'Annotating coronary angiogram images with high accuracy, leveraging medical training to ensure clinically reliable labels for AI model development.',
-      'Providing structured feedback on annotation software performance, usability, and workflow to help improve tool efficiency and user experience.',
-      'Developing clear annotation guidelines to support new annotators, based on best practices refined through consistent, high-quality annotation work.',
+      'Annotated coronary angiogram images with high accuracy, leveraging medical training to ensure clinically reliable labels for AI model development.',
+      'Provided structured feedback on annotation software performance, usability, and workflow to help improve tool efficiency and user experience.',
+      'Developed clear annotation guidelines to support new annotators, based on best practices refined through consistent, high-quality annotation work.',
     ],
   },
   {
@@ -54,23 +88,6 @@ export const experiences: WorkItem[] = [
       'Reviewed technical requirements for an upcoming full-stack platform where the database will be integrated.',
       'Coordinated updates with the broader Ocean Decade Team to validate and align newly received data with the database design.',
       'Recognised for outstanding performance, strong accountability, and exceptional work ethic throughout the assignment.',
-    ],
-  },
-  {
-    role: 'Volunteer – Website Rebuild Team',
-    company: 'Connecting Up / Infoxchange',
-    location: 'Adelaide, South Australia',
-    period: 'Jan 2025 – Present',
-    summary:
-      'Contributing to the rebuild of SAcommunity.org as part of a cross-functional volunteer team using Drupal 11, Python ETL pipelines, and Agile practices.',
-    skills: ['Drupal 11', 'PHP', 'MySQL', 'Docker', 'Agile', 'Python', 'ETL'],
-    achievements: [
-      'Redeveloped SAcommunity.org to improve functionality, performance, and user experience using Drupal, MySQL, and Docker.',
-      'Gathered and analysed requirements in collaboration with the Directory Manager and Connecting Up leadership to guide redevelopment priorities.',
-      'Created detailed, step-by-step onboarding guides in GitHub to streamline volunteer collaboration.',
-      'Set up and maintained a GitHub Project Kanban board, coordinating task allocation across the volunteer team.',
-      'Led the ETL process — developed Python scripts for data cleansing and authored Drupal Migration YAML for seamless data import.',
-      'Leveraged LLMs (Gemini) to transform unstructured data into structured formats for database integration.',
     ],
   },
   {

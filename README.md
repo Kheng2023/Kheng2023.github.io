@@ -2,7 +2,7 @@
 
 Live site: **https://kheng2023.github.io**
 
-Personal portfolio for Yong Kheng Beh — software developer and career-changer from medicine.
+Personal portfolio for Yong Kheng Beh — software engineer and former doctor.
 
 ## Stack
 
