@@ -1,16 +1,17 @@
 import { Grid, Typography, Paper, Box } from '@mui/material'
 import { motion } from 'framer-motion'
 import SchoolIcon from '@mui/icons-material/School'
-import WorkIcon from '@mui/icons-material/Work'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices'
 import CodeIcon from '@mui/icons-material/Code'
 import SectionWrapper, { itemVariants } from '../ui/SectionWrapper'
+import { projects } from '../../data/projects'
 
 const stats = [
   { icon: <SchoolIcon />, value: '6.83 / 7', label: 'Masters GPA' },
   { icon: <MedicalServicesIcon />, value: '8+ Years', label: 'Medical Career' },
-  { icon: <WorkIcon />, value: '4 Internships', label: 'Tech Roles' },
-  { icon: <CodeIcon />, value: '4 Projects', label: 'Portfolio' },
+  { icon: <EmojiEventsIcon />, value: 'CEO Award', label: 'Volunteer of the Year 2026' },
+  { icon: <CodeIcon />, value: String(projects.length), label: 'Projects & Talks' },
 ]
 
 export default function About() {
@@ -41,9 +42,26 @@ export default function About() {
               <Box component="strong" sx={{ color: 'text.primary' }}>
                 Master of Computing and Innovation
               </Box>{' '}
-              at the University of Adelaide, graduating with a GPA of 6.83/7. Since then I've worked on
+              at the University of Adelaide, graduating with a GPA of 6.83/7. Along the way I worked on
               AI/ML research in cardiac surgery, built an LLM-powered chatbot for a not-for-profit, and
               completed a data science internship with the UN Ocean Decade Programme in Paris.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ fontSize: '1.05rem', lineHeight: 1.85, color: 'text.secondary', mb: 2.5 }}
+            >
+              In March 2026 I joined{' '}
+              <Box component="strong" sx={{ color: 'text.primary' }}>
+                Vocare Speech as a full-time software engineer
+              </Box>{' '}
+              after interning there. Handed the new platform straight out of that internship, I
+              finished its migration from Firebase to Supabase and Vercel, took it live, and rebuilt
+              the company website. In my volunteer time I rebuilt SAcommunity.org in Drupal 11 on my
+              own; the not-for-profit now wants to publish it, and Infoxchange named me{' '}
+              <Box component="strong" sx={{ color: 'text.primary' }}>
+                Volunteer of the Year
+              </Box>{' '}
+              in its 2026 CEO Awards.
             </Typography>
             <Typography
               variant="body1"

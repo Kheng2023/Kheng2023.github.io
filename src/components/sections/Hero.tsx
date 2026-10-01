@@ -118,7 +118,7 @@ export default function Hero() {
                   mb: 3,
                 }}
               >
-                Software Developer&nbsp;&nbsp;·&nbsp;&nbsp;Doctor
+                Software Engineer&nbsp;&nbsp;·&nbsp;&nbsp;Doctor
               </Typography>
             </motion.div>
 
@@ -133,17 +133,16 @@ export default function Hero() {
                   lineHeight: 1.82,
                 }}
               >
-                A career-changer with{' '}
+                Software engineer at Vocare Speech, where I{' '}
+                <Box component="strong" sx={{ color: 'text.primary' }}>
+                  took a production platform from Firebase to Supabase and Vercel
+                </Box>{' '}
+                and rebuilt the company website. Before that:{' '}
                 <Box component="strong" sx={{ color: 'text.primary' }}>
                   8+ years in medicine
                 </Box>{' '}
-                and a{' '}
-                <Box component="strong" sx={{ color: 'text.primary' }}>
-                  Master of Computing & Innovation
-                </Box>{' '}
-                (GPA&nbsp;6.83/7) from the University of Adelaide. Passionate
-                about AI, software development, and building software that makes
-                a real difference.
+                and a Master of Computing & Innovation (GPA&nbsp;6.83/7) from
+                the University of Adelaide.
               </Typography>
             </motion.div>
 
@@ -177,7 +176,7 @@ export default function Hero() {
 
             <motion.div variants={textItem(0.58)} initial="hidden" animate="visible">
               <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap' }}>
-                {['Python', 'React', 'LangChain', 'Firebase', 'Machine Learning'].map(skill => (
+                {['TypeScript', 'React', 'Next.js', 'Supabase', 'Python', 'Drupal'].map(skill => (
                   <Chip
                     key={skill}
                     label={skill}

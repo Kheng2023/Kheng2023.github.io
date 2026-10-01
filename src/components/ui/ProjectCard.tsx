@@ -47,10 +47,16 @@ export default function ProjectCard({ project }: { project: Project }) {
       >
         <CardMedia
           component="img"
-          height={190}
           image={project.image}
           alt={project.title}
-          sx={{ objectFit: 'cover' }}
+          loading="lazy"
+          sx={{
+            aspectRatio: '2 / 1',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+          }}
         />
         <CardContent sx={{ flexGrow: 1, p: 3 }}>
           <Typography variant="h6" fontWeight={700} gutterBottom sx={{ fontSize: '1rem' }}>
