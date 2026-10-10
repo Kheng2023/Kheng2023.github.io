@@ -3,6 +3,7 @@ node_modules/
 
 # Build output (GitHub Actions builds this on the server)
 dist/
+dist-ssr/
 
 # Local env files
 .env

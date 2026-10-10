@@ -41,9 +41,14 @@ const imageVariant = {
 }
 
 export default function Hero() {
-  const [greeting, setGreeting] = useState(getGreeting())
+  // Neutral first render: the page is prerendered at build time, when the visitor's local hour is unknown.
+  const [greeting, setGreeting] = useState('Hello')
+  // The canvas is decorative and lazy-loaded, which build-time rendering can't wait for; show it after mount.
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    setGreeting(getGreeting())
     const id = setInterval(() => setGreeting(getGreeting()), 60_000)
     return () => clearInterval(id)
   }, [])
@@ -70,9 +75,11 @@ export default function Hero() {
         background: 'linear-gradient(135deg, #F8F9FA 0%, #EAF3EE 100%)'
       }}
     >
-      <Suspense fallback={null}>
-        <ThreeBackground />
-      </Suspense>
+      {mounted && (
+        <Suspense fallback={null}>
+          <ThreeBackground />
+        </Suspense>
+      )}
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
           {/* ── Text column ── */}
