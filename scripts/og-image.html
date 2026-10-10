@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  Source for public/images/og-card.png, the 1200x630 link-preview image (og:image).
+  Re-render after changing the text, from the repo root:
+    google-chrome --headless=new --hide-scrollbars --window-size=1200,630 \
+      --screenshot=public/images/og-card.png "file://$PWD/scripts/og-image.html"
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-weight: 800;
+        src: url('../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-800-normal.woff2');
+      }
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        font-weight: 700;
+        src: url('../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-weight: 500;
+        src: url('../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-weight: 600;
+        src: url('../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2');
+      }
+      * { margin: 0; box-sizing: border-box; }
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        padding: 0 80px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #eaf3ee 100%);
+        font-family: 'Inter', sans-serif;
+        color: #1f2937;
+      }
+      .network { position: absolute; inset: 0; }
+      .text { position: relative; flex: 1; }
+      h1 {
+        font: 800 76px/1.05 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.02em;
+      }
+      .role {
+        margin-top: 14px;
+        font: 700 34px/1.2 'Plus Jakarta Sans', sans-serif;
+        color: #1b4332;
+      }
+      .bar { width: 64px; height: 5px; margin: 28px 0; border-radius: 3px; background: #d4a373; }
+      ul { list-style: none; padding: 0; font-size: 22px; line-height: 1.65; font-weight: 500; color: #4b5563; }
+      .url { margin-top: 28px; font-size: 22px; font-weight: 600; color: #2d6a4f; }
+      .photo {
+        position: relative;
+        width: 330px;
+        height: 415px;
+        flex-shrink: 0;
+        padding: 5px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(45, 106, 79, 0.38), rgba(96, 108, 56, 0.14) 52%, rgba(212, 163, 115, 0.24));
+        box-shadow: 0 24px 56px rgba(27, 67, 50, 0.25);
+      }
+      .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 25px; display: block; }
+    </style>
+  </head>
+  <body>
+    <!-- Faint particle network, echoing the hero background -->
+    <svg class="network" viewBox="0 0 1200 630" fill="none" stroke="rgba(96,108,56,0.28)" stroke-width="1.2">
+      <polyline points="40,60 130,22 215,88 300,40" />
+      <polyline points="980,585 1060,540 1120,600 1175,555" />
+      <polyline points="30,520 95,585 160,548" />
+      <g fill="rgba(27,67,50,0.35)" stroke="none">
+        <circle cx="40" cy="60" r="3" /><circle cx="130" cy="22" r="3" /><circle cx="215" cy="88" r="3" />
+        <circle cx="300" cy="40" r="3" /><circle cx="980" cy="585" r="3" /><circle cx="1060" cy="540" r="3" />
+        <circle cx="1120" cy="600" r="3" /><circle cx="1175" cy="555" r="3" /><circle cx="30" cy="520" r="3" />
+        <circle cx="95" cy="585" r="3" /><circle cx="160" cy="548" r="3" />
+      </g>
+    </svg>
+
+    <div class="text">
+      <h1>Yong Kheng Beh</h1>
+      <p class="role">Software Engineer · Doctor</p>
+      <div class="bar"></div>
+      <ul>
+        <li>Software engineer at Vocare Speech, Adelaide</li>
+        <li>8+ years in medicine</li>
+        <li>Master of Computing &amp; Innovation, University of Adelaide</li>
+        <li>Infoxchange Volunteer of the Year 2026</li>
+      </ul>
+      <p class="url">kheng2023.github.io</p>
+    </div>
+
+    <div class="photo"><img src="../public/images/profile-500px.jpg" alt="" /></div>
+  </body>
+</html>
