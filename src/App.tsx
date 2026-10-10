@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { ThemeProvider, CssBaseline, Box } from '@mui/material'
+import { MotionConfig } from 'framer-motion'
 import { getTheme } from './theme/theme'
 import NavBar from './components/layout/NavBar'
 import Footer from './components/layout/Footer'
@@ -15,17 +16,20 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <NavBar />
-      <Box component="main">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Education />
-        <DoctorCareer />
-      </Box>
-      <Footer />
+      {/* Honour the OS "reduce motion" setting: skips movement animations, keeps opacity fades */}
+      <MotionConfig reducedMotion="user">
+        <CssBaseline />
+        <NavBar />
+        <Box component="main">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Education />
+          <DoctorCareer />
+        </Box>
+        <Footer />
+      </MotionConfig>
     </ThemeProvider>
   )
 }

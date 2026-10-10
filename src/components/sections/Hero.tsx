@@ -8,7 +8,7 @@ import {
   Chip,
   Container,
 } from '@mui/material'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import GitHubIcon from '@mui/icons-material/GitHub'
 
@@ -36,6 +36,8 @@ export default function Hero() {
   const [greeting, setGreeting] = useState('Hello')
   // The canvas is decorative and lazy-loaded, which build-time rendering can't wait for; show it after mount.
   const [mounted, setMounted] = useState(false)
+  // Continuous particle motion; skip it for visitors who ask their OS to reduce motion
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     setMounted(true)
@@ -66,7 +68,7 @@ export default function Hero() {
         background: 'linear-gradient(135deg, #F8F9FA 0%, #EAF3EE 100%)'
       }}
     >
-      {mounted && (
+      {mounted && !reduceMotion && (
         <Suspense fallback={null}>
           <ThreeBackground />
         </Suspense>
