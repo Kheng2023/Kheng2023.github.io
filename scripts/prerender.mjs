@@ -1,7 +1,7 @@
 // Bakes the rendered page into dist/index.html so crawlers that don't run
 // JavaScript (most LLM bots) still see the content, and writes the
 // machine-readable files generated from src/seo.ts.
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile, readdir, writeFile } from 'node:fs/promises'
 
 const dist = new URL('../dist/', import.meta.url)
 const { render, personJsonLd, llmsTxt, sitemapXml } = await import(
@@ -17,10 +17,20 @@ for (const marker of [ROOT, HEAD]) {
   if (!template.includes(marker)) throw new Error(`prerender: "${marker}" not found in dist/index.html`)
 }
 
+// Preload the Latin web fonts. Otherwise the browser only finds them after parsing the CSS, so the
+// prerendered text paints in a fallback font first and visibly reflows (layout shift) when they arrive.
+const fonts = (await readdir(new URL('assets/', dist))).filter(f => /-latin-\d+-normal-.+\.woff2$/.test(f))
+const preloads = fonts
+  .map(f => `<link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin />`)
+  .join('\n    ')
+
 const { html, styles } = render()
 // Function replacers: a plain string would treat "$&" etc. in the content as special patterns.
 const page = template
-  .replace(HEAD, () => `${styles}\n    <script type="application/ld+json">${personJsonLd()}</script>`)
+  .replace(
+    HEAD,
+    () => `${preloads}\n    ${styles}\n    <script type="application/ld+json">${personJsonLd()}</script>`,
+  )
   .replace(ROOT, () => `<div id="root">${html}</div>`)
 
 await Promise.all([

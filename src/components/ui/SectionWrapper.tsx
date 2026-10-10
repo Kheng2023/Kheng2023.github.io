@@ -60,6 +60,7 @@ export default function SectionWrapper({
             <Box sx={{ mb: 6 }}>
               <Typography
                 variant="overline"
+                component="h2"
                 sx={{
                   color: headingColor,
                   fontWeight: 700,
@@ -72,6 +73,7 @@ export default function SectionWrapper({
               {subtitle && (
                 <Typography
                   variant="h3"
+                  component="p"
                   sx={{
                     fontWeight: 700,
                     mt: 0.5,

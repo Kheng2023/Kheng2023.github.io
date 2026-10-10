@@ -27,7 +27,7 @@ export default function Education() {
                 <Box sx={{ color: 'primary.main', mb: 2 }}>
                   <SchoolIcon sx={{ fontSize: 38 }} />
                 </Box>
-                <Typography variant="h6" fontWeight={700} gutterBottom>
+                <Typography variant="h6" component="h3" fontWeight={700} gutterBottom>
                   {edu.degree}
                 </Typography>
                 <Typography

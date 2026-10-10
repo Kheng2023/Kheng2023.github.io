@@ -74,6 +74,7 @@ export default function NavBar() {
           {/* Logo / name */}
           <Typography
             variant="h6"
+            component="div"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             sx={{
               fontFamily: '"Plus Jakarta Sans", sans-serif',

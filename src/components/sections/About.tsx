@@ -98,6 +98,7 @@ export default function About() {
                     <Box sx={{ color: 'primary.main', mb: 1 }}>{stat.icon}</Box>
                     <Typography
                       variant="h5"
+                      component="p"
                       fontWeight={700}
                       color="primary.main"
                       sx={{ fontSize: '1.2rem' }}

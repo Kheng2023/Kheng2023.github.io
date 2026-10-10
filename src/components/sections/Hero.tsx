@@ -21,15 +21,6 @@ const getGreeting = () => {
   return 'Good evening'
 }
 
-const textItem = (delay: number) => ({
-  hidden: { opacity: 0, y: 32 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { delay, duration: 0.6, ease: 'easeOut' },
-  },
-})
-
 const imageVariant = {
   hidden: { opacity: 0, scale: 0.82, rotate: -4 },
   visible: {
@@ -84,7 +75,7 @@ export default function Hero() {
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
           {/* ── Text column ── */}
           <Grid item xs={12} md={7}>
-            <motion.div variants={textItem(0)} initial="hidden" animate="visible">
+            <div>
               <Typography
                 variant="body2"
                 sx={{
@@ -98,9 +89,9 @@ export default function Hero() {
               >
                 {greeting} 👋
               </Typography>
-            </motion.div>
+            </div>
 
-            <motion.div variants={textItem(0.12)} initial="hidden" animate="visible">
+            <div>
               <Typography
                 variant="h1"
                 sx={{
@@ -113,11 +104,12 @@ export default function Hero() {
               >
                 Yong Kheng Beh
               </Typography>
-            </motion.div>
+            </div>
 
-            <motion.div variants={textItem(0.24)} initial="hidden" animate="visible">
+            <div>
               <Typography
                 variant="h2"
+                component="p"
                 sx={{
                   fontSize: { xs: '1.2rem', md: '1.45rem' },
                   fontWeight: 600,
@@ -127,9 +119,9 @@ export default function Hero() {
               >
                 Software Engineer&nbsp;&nbsp;·&nbsp;&nbsp;Doctor
               </Typography>
-            </motion.div>
+            </div>
 
-            <motion.div variants={textItem(0.36)} initial="hidden" animate="visible">
+            <div>
               <Typography
                 variant="body1"
                 sx={{
@@ -151,9 +143,9 @@ export default function Hero() {
                 and a Master of Computing & Innovation (GPA&nbsp;6.83/7) from
                 the University of Adelaide.
               </Typography>
-            </motion.div>
+            </div>
 
-            <motion.div variants={textItem(0.48)} initial="hidden" animate="visible">
+            <div>
               <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', mb: 4 }}>
                 <Button
                   variant="contained"
@@ -179,9 +171,9 @@ export default function Hero() {
                 </Button>
 
               </Box>
-            </motion.div>
+            </div>
 
-            <motion.div variants={textItem(0.58)} initial="hidden" animate="visible">
+            <div>
               <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap' }}>
                 {['TypeScript', 'React', 'Next.js', 'Supabase', 'Python', 'Drupal'].map(skill => (
                   <Chip
@@ -194,7 +186,7 @@ export default function Hero() {
                   />
                 ))}
               </Box>
-            </motion.div>
+            </div>
           </Grid>
 
           {/* ── Photo column ── */}

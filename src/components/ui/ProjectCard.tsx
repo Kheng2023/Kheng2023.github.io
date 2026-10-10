@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           }}
         />
         <CardContent sx={{ flexGrow: 1, p: 3 }}>
-          <Typography variant="h6" fontWeight={700} gutterBottom sx={{ fontSize: '1rem' }}>
+          <Typography variant="h6" component="h3" fontWeight={700} gutterBottom sx={{ fontSize: '1rem' }}>
             {project.title}
           </Typography>
           <Typography
