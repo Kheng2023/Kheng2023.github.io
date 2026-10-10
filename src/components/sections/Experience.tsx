@@ -6,9 +6,11 @@ import {
   Paper,
   Collapse,
   IconButton,
+  Link,
 } from '@mui/material'
 import { motion } from 'framer-motion'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import SectionWrapper, { itemVariants } from '../ui/SectionWrapper'
 import { experiences } from '../../data/experience'
 
@@ -119,7 +121,21 @@ export default function Experience() {
                       {exp.role}
                     </Typography>
                     <Typography variant="body2" color="primary.main" fontWeight={600}>
-                      {exp.company}
+                      {exp.companyUrl ? (
+                        <Link
+                          href={exp.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          color="inherit"
+                          underline="hover"
+                          // Open the site without also toggling the card
+                          onClick={e => e.stopPropagation()}
+                        >
+                          {exp.company}
+                        </Link>
+                      ) : (
+                        exp.company
+                      )}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
                       {exp.location} · {exp.period}
@@ -154,6 +170,23 @@ export default function Experience() {
                 >
                   {exp.summary}
                 </Typography>
+
+                {/* Supporting write-ups: outside the Collapse so they're visible without expanding */}
+                {exp.links?.map(link => (
+                  <Link
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="body2"
+                    fontWeight={600}
+                    underline="hover"
+                    sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 1, mr: 2 }}
+                  >
+                    {link.label}
+                    <OpenInNewIcon sx={{ fontSize: '0.9rem' }} />
+                  </Link>
+                ))}
 
                 {/* Skill chips */}
                 <Box sx={{ display: 'flex', gap: 0.6, flexWrap: 'wrap', mt: 1.5 }}>

@@ -25,7 +25,7 @@ export function personJsonLd(): string {
     image: `${SITE_URL}images/profile-500px.jpg`,
     description: SUMMARY,
     jobTitle: current.role,
-    worksFor: { '@type': 'Organization', name: current.company },
+    worksFor: { '@type': 'Organization', name: current.company, url: current.companyUrl },
     alumniOf: [
       { '@type': 'CollegeOrUniversity', name: 'University of Adelaide' },
       { '@type': 'CollegeOrUniversity', name: 'University of Malaya' },

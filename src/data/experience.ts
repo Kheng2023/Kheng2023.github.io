@@ -1,17 +1,21 @@
 export interface WorkItem {
   role: string
   company: string
+  companyUrl?: string
   location: string
   period: string
   summary: string
   skills: string[]
   achievements: string[]
+  // Supporting write-ups, shown under the summary and listed in llms.txt
+  links?: { label: string; url: string }[]
 }
 
 export const experiences: WorkItem[] = [
   {
     role: 'Software Engineer',
     company: 'Vocare Speech Australia',
+    companyUrl: 'https://vocare.com.au/',
     location: 'Adelaide, South Australia',
     period: 'Mar 2026 – Present',
     summary:
@@ -42,10 +46,12 @@ export const experiences: WorkItem[] = [
       'Created detailed, step-by-step onboarding guides in GitHub and maintained a GitHub Project Kanban board to coordinate the volunteer team.',
       'Leveraged LLMs (Gemini) to transform unstructured data into structured formats for database integration.',
     ],
+    links: [{ label: 'Website Rebuild Journey', url: 'https://sacommunity.org/node/1423' }],
   },
   {
     role: 'Software Engineer Intern',
     company: 'Vocare Speech Australia',
+    companyUrl: 'https://vocare.com.au/',
     location: 'Adelaide, South Australia',
     period: 'Dec 2025 – Feb 2026',
     summary:
