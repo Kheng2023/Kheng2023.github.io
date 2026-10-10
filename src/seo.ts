@@ -10,7 +10,7 @@ export const SITE_URL = 'https://kheng2023.github.io/'
 const NAME = 'Yong Kheng Beh'
 const PROFILES = ['https://github.com/Kheng2023', 'https://www.linkedin.com/in/yong-kheng-beh']
 const SUMMARY =
-  'Software engineer at Vocare Speech in Adelaide, South Australia. Former doctor with 8+ years in medicine, and a Master of Computing and Innovation (GPA 6.83/7) from the University of Adelaide.'
+  'Software engineer at Vocare Speech in Adelaide, South Australia, specialising in full-stack TypeScript (Next.js, React, Supabase) and AI-assisted development. Former doctor (MBBS, University of Malaya) with 8+ years in medicine, and a Master of Computing and Innovation (GPA 6.83/7) from the University of Adelaide.'
 
 // The first experience entry is the current role.
 const current = experiences[0]
