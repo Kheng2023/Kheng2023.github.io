@@ -47,9 +47,12 @@ export default function Footer() {
 
             <Box sx={{ display: 'flex', gap: 0.5 }}>
               <IconButton
-                href="mailto:yongkhengbeh@gmail.com"
                 aria-label="Email"
                 size="small"
+                onClick={() => {
+                  // Built at click time so the full address never appears in the page HTML
+                  window.location.href = `mailto:${['yongkhengbeh+site', 'gmail.com'].join('@')}`
+                }}
                 sx={{
                   color: 'text.secondary',
                   '&:hover': { color: 'primary.main' },

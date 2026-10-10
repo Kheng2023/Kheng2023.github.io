@@ -15,10 +15,10 @@ export const experiences: WorkItem[] = [
     location: 'Adelaide, South Australia',
     period: 'Mar 2026 – Present',
     summary:
-      "Sole engineer on Vocare's production pronunciation-training platform. Handed the new platform (V2) as a just-finished intern, I took it over from an external team's early foundation, completed the migration from Firebase to Supabase and Vercel, took it live, and rebuilt the company website.",
+      "Sole engineer on Vocare's production pronunciation-training platform. I led the new platform (V2) through its migration from Firebase to Supabase and Vercel, launched it to users, and rebuilt the company website.",
     skills: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Vercel', 'MUI', 'Vitest', 'Playwright', 'Claude Code'],
     achievements: [
-      "Platform Migration: Took over the V2 platform from an external team's early foundation and delivered the migration of the production app from Firebase (Firestore, Cloud Functions, Hosting) to Next.js, Supabase (Postgres) and Vercel as the sole engineer. V2 is now live for users and the Firebase version has been retired.",
+      'Platform Migration: Building on an initial foundation from a contract team, completed the migration of the production app from Firebase (Firestore, Cloud Functions, Hosting) to Next.js, Supabase (Postgres) and Vercel as the sole engineer. V2 is now live and the Firebase version has been retired.',
       'Website Redevelopment: Designed and built the new vocare.com.au on my own, replacing a single static HTML page with a Next.js, React and TypeScript site on Vercel, backed by unit and end-to-end tests.',
       'Production Ownership: Own the platform end to end — features, database schema changes, CI, error monitoring, and dependency security patches.',
       'Accessibility: Remediated the marketing site against WCAG 2.2 AA across theme, navigation, motion and forms.',
@@ -49,13 +49,13 @@ export const experiences: WorkItem[] = [
     location: 'Adelaide, South Australia',
     period: 'Dec 2025 – Feb 2026',
     summary:
-      'Primary in-house developer responsible for maintaining the production app (V1) and serving as technical liaison between the founders and the external team building the new platform (V2).',
+      'Primary in-house developer for the production app (V1), and technical point of contact between the founders and the contract team building the new platform (V2).',
     skills: ['React', 'TypeScript', 'Firebase', 'GitHub Copilot', 'Notion', 'QA'],
     achievements: [
       'Production Maintenance: Fixed a large number of critical bugs in the live app — including mobile layout issues and audio playback errors — to ensure the system ran smoothly for active users.',
       'Performance Improvements: Reduced cloud costs and improved app speed by setting up caching and optimising Firebase database queries.',
       'AI-Assisted Development: Leveraged GitHub Copilot to accelerate development — using it to understand undocumented legacy code and rapidly build new features such as workshop reminders and progress bars in React and TypeScript.',
-      "Quality Assurance: Acted as the internal technical expert reviewing the external team's V2 build, ensuring key business requirements from the current version were not missed.",
+      'Quality Assurance: Reviewed V2 builds against the existing app so business requirements carried over cleanly to the new platform.',
       'Process Improvement: Set up a structured bug-logging system on Notion, enabling the CEO and non-technical staff to report issues accurately and improving overall engineering visibility.',
     ],
   },
