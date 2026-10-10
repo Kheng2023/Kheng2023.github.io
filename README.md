@@ -23,7 +23,7 @@ src/
 │   └── ui/            # ProjectCard, SectionWrapper, ThreeBackground (Canvas 2D)
 ├── data/              # experience, education, projects, medical — all page content lives here
 ├── theme/             # MUI theme
-├── seo.ts             # JSON-LD, llms.txt and sitemap.xml, generated from src/data
+├── seo.ts             # JSON-LD, llms.txt, llms-full.txt and sitemap.xml, generated from src/data
 ├── entry-server.tsx   # Build-time render of <App /> to HTML + critical CSS
 ├── App.tsx
 └── main.tsx           # Browser entry: hydrates the prerendered HTML
@@ -43,7 +43,7 @@ npm run build    # production build with prerendering → dist/
 npm run preview  # serve dist/ to check the production build
 ```
 
-To change site content, edit the files in `src/data/`. The page, JSON-LD, `llms.txt` and
+To change site content, edit the files in `src/data/`. The page, JSON-LD, `llms.txt` files and
 sitemap all read from there, so they stay in sync.
 
 ## How the build works
@@ -53,8 +53,8 @@ sitemap all read from there, so they stay in sync.
 1. `vite build`: the normal browser bundle.
 2. `vite build --ssr src/entry-server.tsx`: a Node version of the app (into `dist-ssr/`).
 3. `node scripts/prerender.mjs`: renders the app to HTML and injects it, MUI's CSS, font
-   preloads and the JSON-LD into `dist/index.html`, then writes `llms.txt` and
-   `sitemap.xml`. It fails the build if the placeholders in `index.html` go missing.
+   preloads and the JSON-LD into `dist/index.html`, then writes `llms.txt` (a short
+   index), `llms-full.txt` (all content) and `sitemap.xml`. It fails the build if the placeholders in `index.html` go missing.
 
 In the browser, `main.tsx` **hydrates** that HTML: React attaches to the existing markup
 instead of re-creating it.

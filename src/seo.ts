@@ -8,7 +8,10 @@ import { medicalRoles } from './data/medical'
 export const SITE_URL = 'https://kheng2023.github.io/'
 
 const NAME = 'Yong Kheng Beh'
-const PROFILES = ['https://github.com/Kheng2023', 'https://www.linkedin.com/in/yong-kheng-beh']
+const PROFILES = [
+  { label: 'GitHub', url: 'https://github.com/Kheng2023' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yong-kheng-beh' },
+]
 const SUMMARY =
   'Software engineer at Vocare Speech in Adelaide, South Australia, specialising in full-stack TypeScript (Next.js, React, Supabase) and AI-assisted development. Former doctor (MBBS, University of Malaya) with 8+ years in medicine, and a Master of Computing and Innovation (GPA 6.83/7) from the University of Adelaide.'
 
@@ -32,28 +35,67 @@ export function personJsonLd(): string {
     ],
     award: 'Infoxchange CEO Award – Volunteer of the Year 2026',
     knowsAbout: ['TypeScript', 'React', 'Next.js', 'Supabase', 'PostgreSQL', 'Python', 'Drupal', 'Medicine'],
-    sameAs: PROFILES,
+    sameAs: PROFILES.map(p => p.url),
   }
   // Escape "<" so content can never close the surrounding <script> tag early.
   return JSON.stringify(person).replace(/</g, '\\u003c')
 }
 
-// llms.txt (https://llmstxt.org): a plain-markdown summary for AI tools.
+// Every skill listed across experience entries, deduplicated, current role first.
+const skills = [...new Set(experiences.flatMap(exp => exp.skills))]
+
+// llms.txt (https://llmstxt.org): a short markdown index for AI tools, linking to the detail.
 export function llmsTxt(): string {
   const lines = [
     `# ${NAME}`,
     '',
     `> ${SUMMARY}`,
     '',
+    `Current role: ${current.role} at ${current.company} (${current.period}).`,
+    '',
+    `Skills: ${skills.join(', ')}`,
+    '',
+    '## Profiles',
+    '',
+    `- [Website](${SITE_URL})`,
+    ...PROFILES.map(p => `- [${p.label}](${p.url})`),
+    '',
+    '## Projects',
+    '',
+    ...projects.map(p => `- [${p.title}](${p.liveUrl ?? p.githubUrl ?? SITE_URL}): ${p.description}`),
+    '',
+    '## Articles',
+    '',
+    ...experiences.flatMap(exp =>
+      (exp.links ?? []).map(l => `- [${l.label}](${l.url}): ${exp.role}, ${exp.company}`),
+    ),
+    '',
+    '## Full profile',
+    '',
+    `- [llms-full.txt](${SITE_URL}llms-full.txt): every role with achievements, education and medical career`,
+    '',
+  ]
+  return lines.join('\n')
+}
+
+// llms-full.txt: the whole site content as one markdown file.
+export function llmsFullTxt(): string {
+  const lines = [
+    `# ${NAME}`,
+    '',
+    `> ${SUMMARY}`,
+    '',
     `Website: ${SITE_URL}`,
-    ...PROFILES.map(url => `Profile: ${url}`),
+    ...PROFILES.map(p => `${p.label}: ${p.url}`),
     '',
     '## Experience',
     ...experiences.flatMap(exp => [
       '',
       `### ${exp.role} — ${exp.company} (${exp.location}, ${exp.period})`,
+      ...(exp.companyUrl ? [`Company website: ${exp.companyUrl}`] : []),
       exp.summary,
       ...exp.achievements.map(a => `- ${a}`),
+      ...(exp.links ?? []).map(l => `Article: [${l.label}](${l.url})`),
       `Skills: ${exp.skills.join(', ')}`,
     ]),
     '',

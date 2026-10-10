@@ -4,7 +4,7 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises'
 
 const dist = new URL('../dist/', import.meta.url)
-const { render, personJsonLd, llmsTxt, sitemapXml } = await import(
+const { render, personJsonLd, llmsTxt, llmsFullTxt, sitemapXml } = await import(
   new URL('../dist-ssr/entry-server.js', import.meta.url).href
 )
 
@@ -36,6 +36,7 @@ const page = template
 await Promise.all([
   writeFile(new URL('index.html', dist), page),
   writeFile(new URL('llms.txt', dist), llmsTxt()),
+  writeFile(new URL('llms-full.txt', dist), llmsFullTxt()),
   writeFile(new URL('sitemap.xml', dist), sitemapXml()),
 ])
-console.log('prerender: wrote index.html, llms.txt, sitemap.xml')
+console.log('prerender: wrote index.html, llms.txt, llms-full.txt, sitemap.xml')

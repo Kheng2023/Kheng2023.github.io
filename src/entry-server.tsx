@@ -5,7 +5,7 @@ import { CacheProvider } from '@emotion/react'
 import createEmotionServer from '@emotion/server/create-instance'
 import App from './App'
 
-export { personJsonLd, llmsTxt, sitemapXml } from './seo'
+export { personJsonLd, llmsTxt, llmsFullTxt, sitemapXml } from './seo'
 
 export function render() {
   // Key 'css' matches MUI's default client cache, so the browser reuses these styles on hydration.
