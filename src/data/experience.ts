@@ -9,6 +9,8 @@ export interface WorkItem {
   achievements: string[]
   // Supporting write-ups, shown under the summary and listed in llms.txt
   links?: { label: string; url: string }[]
+  // Shown as a badge on the entry; also feeds the JSON-LD and llms-full.txt
+  award?: string
 }
 
 export const experiences: WorkItem[] = [
@@ -35,10 +37,10 @@ export const experiences: WorkItem[] = [
     location: 'Adelaide, South Australia',
     period: 'Jan 2025 – Present',
     summary:
-      'Rebuilding SAcommunity.org, a South Australian community directory, in Drupal 11. Started in a cross-functional volunteer team, then returned in March 2026 to finish the rebuild on my own; the not-for-profit has seen the demo and wants to publish it. Infoxchange CEO Award – Volunteer of the Year 2026.',
+      'Rebuilding SAcommunity.org, a South Australian community directory, in Drupal 11. Started in a cross-functional volunteer team, then returned in March 2026 to finish the rebuild on my own; the not-for-profit has seen the demo and wants to publish it.',
+    award: 'Infoxchange CEO Award – Volunteer of the Year 2026',
     skills: ['Drupal 11', 'PHP', 'MySQL', 'Docker', 'Python', 'ETL', 'Claude Code'],
     achievements: [
-      'Recognition: Awarded the Infoxchange CEO Award – Volunteer of the Year (August 2026).',
       'Solo Rebuild: Returned in March 2026 and rebuilt the site on a clean Drupal 11 codebase on my own, including a redesign of the website.',
       'Streamlined Migration: Combined the data-cleansing Python scripts and Drupal Migration YAML into one streamlined, repeatable migration process.',
       'Stakeholder Demo: Demoed the rebuilt site to the not-for-profit, who now want to publish it.',

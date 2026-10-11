@@ -76,6 +76,22 @@ export function getTheme() {
     typography: sharedTypography,
     shape: { borderRadius: 12 },
     components: {
+      // A visible keyboard focus ring on every button, icon button and link (WCAG 2.4.7).
+      // :focus-visible only shows it for keyboard users, not on mouse click.
+      MuiButtonBase: {
+        styleOverrides: {
+          root: {
+            '&.Mui-focusVisible': { outline: '2px solid #2D6A4F', outlineOffset: 2 },
+          },
+        },
+      },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            '&:focus-visible': { outline: '2px solid #2D6A4F', outlineOffset: 2, borderRadius: 2 },
+          },
+        },
+      },
       MuiButton: {
         styleOverrides: {
           root: {

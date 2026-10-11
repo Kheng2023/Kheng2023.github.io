@@ -100,11 +100,24 @@ export default function Hero() {
                   fontSize: { xs: '2.6rem', sm: '3.5rem', md: '4rem' },
                   fontWeight: 800,
                   lineHeight: 1.1,
-                  mb: 1.5,
+                  mb: 1,
                   letterSpacing: '-0.02em',
                 }}
               >
-                Yong Kheng Beh
+                {/* Keep the compound given name together so it never breaks across lines */}
+                <Box component="span" sx={{ whiteSpace: 'nowrap' }}>Yong Kheng</Box> Beh
+              </Typography>
+              {/* Pronunciation: given name · family name */}
+              <Typography
+                component="p"
+                sx={{
+                  fontFamily: 'ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace',
+                  fontSize: '0.9rem',
+                  color: 'text.secondary',
+                  mb: 1.5,
+                }}
+              >
+                / yaw-ng kay-ng · beh /
               </Typography>
             </div>
 

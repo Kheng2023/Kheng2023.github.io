@@ -11,6 +11,7 @@ import {
 import { motion } from 'framer-motion'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import SectionWrapper, { itemVariants } from '../ui/SectionWrapper'
 import { experiences } from '../../data/experience'
 
@@ -170,6 +171,28 @@ export default function Experience() {
                 >
                   {exp.summary}
                 </Typography>
+
+                {exp.award && (
+                  <Box
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 0.75,
+                      mt: 1.5,
+                      px: 1.25,
+                      py: 0.5,
+                      borderRadius: 1.5,
+                      bgcolor: 'rgba(212,163,115,0.18)',
+                      border: '1px solid',
+                      borderColor: 'warning.main',
+                    }}
+                  >
+                    <EmojiEventsIcon aria-hidden="true" sx={{ fontSize: '1.1rem', color: 'warning.dark' }} />
+                    <Typography variant="body2" fontWeight={600} color="text.primary">
+                      {exp.award}
+                    </Typography>
+                  </Box>
+                )}
 
                 {/* Supporting write-ups: outside the Collapse so they're visible without expanding */}
                 {exp.links?.map(link => (

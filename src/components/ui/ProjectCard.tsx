@@ -48,10 +48,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         <CardMedia
           component="img"
           image={project.image}
-          alt={project.title}
+          alt={project.imageAlt}
           loading="lazy"
           sx={{
-            aspectRatio: '2 / 1',
+            // Reserves the image's space before it loads, so cards don't jump (CLS)
+            aspectRatio: '16 / 9',
             objectFit: 'cover',
             objectPosition: 'top',
             borderBottom: '1px solid',

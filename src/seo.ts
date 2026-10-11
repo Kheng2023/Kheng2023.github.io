@@ -33,7 +33,7 @@ export function personJsonLd(): string {
       { '@type': 'CollegeOrUniversity', name: 'University of Adelaide' },
       { '@type': 'CollegeOrUniversity', name: 'University of Malaya' },
     ],
-    award: 'Infoxchange CEO Award – Volunteer of the Year 2026',
+    award: experiences.flatMap(exp => (exp.award ? [exp.award] : [])),
     knowsAbout: ['TypeScript', 'React', 'Next.js', 'Supabase', 'PostgreSQL', 'Python', 'Drupal', 'Medicine'],
     sameAs: PROFILES.map(p => p.url),
   }
@@ -94,6 +94,7 @@ export function llmsFullTxt(): string {
       `### ${exp.role} — ${exp.company} (${exp.location}, ${exp.period})`,
       ...(exp.companyUrl ? [`Company website: ${exp.companyUrl}`] : []),
       exp.summary,
+      ...(exp.award ? [`Award: ${exp.award}`] : []),
       ...exp.achievements.map(a => `- ${a}`),
       ...(exp.links ?? []).map(l => `Article: [${l.label}](${l.url})`),
       `Skills: ${exp.skills.join(', ')}`,

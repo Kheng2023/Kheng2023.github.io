@@ -1,38 +1,104 @@
 import { useState } from 'react'
-import { Box, Typography, Paper, Collapse, IconButton, Grid, Link } from '@mui/material'
+import { Box, Typography, Paper, Collapse, IconButton, Link, SvgIcon } from '@mui/material'
 import { motion } from 'framer-motion'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices'
 import VerifiedIcon from '@mui/icons-material/Verified'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined'
+import BugReportOutlinedIcon from '@mui/icons-material/BugReportOutlined'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
+import CallMergeIcon from '@mui/icons-material/CallMerge'
+import RecordVoiceOverOutlinedIcon from '@mui/icons-material/RecordVoiceOverOutlined'
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined'
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined'
+import CodeIcon from '@mui/icons-material/Code'
+import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined'
+import MemoryOutlinedIcon from '@mui/icons-material/MemoryOutlined'
 import SectionWrapper, { itemVariants } from '../ui/SectionWrapper'
 import { medicalRoles } from '../../data/medical'
 
-const transferableSkills = [
+type Icon = typeof SvgIcon
+
+// Hidden on screen but still read by screen readers.
+// Sizes are strings on purpose: in sx a bare number <= 1 means a percentage (1 = 100%).
+const visuallyHidden = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  margin: '-1px',
+  padding: 0,
+  border: 0,
+  overflow: 'hidden',
+  clip: 'rect(0 0 0 0)',
+  whiteSpace: 'nowrap',
+} as const
+
+// Each skill pairs a clinical experience with its engineering parallel
+const transferableSkills: {
+  skill: string
+  clinical: string
+  engineering: string
+  ClinicalIcon: Icon
+  EngineeringIcon: Icon
+}[] = [
   {
     skill: 'Analytical Thinking',
-    desc: 'Diagnosing complex conditions with incomplete data → debugging and system design',
+    clinical: 'Diagnosing complex conditions with incomplete data',
+    engineering: 'Root-cause debugging and system design',
+    ClinicalIcon: MonitorHeartOutlinedIcon,
+    EngineeringIcon: BugReportOutlinedIcon,
   },
   {
     skill: 'High-Stakes Decisions',
-    desc: 'Emergency medicine under pressure → prioritising critical engineering tasks',
+    clinical: 'Emergency medicine under pressure',
+    engineering: 'Prioritising critical engineering tasks',
+    ClinicalIcon: ErrorOutlineIcon,
+    EngineeringIcon: CallMergeIcon,
   },
   {
     skill: 'Stakeholder Communication',
-    desc: 'Explaining complex diagnoses to patients → translating technical detail to non-technical audiences',
+    clinical: 'Explaining complex diagnoses to patients',
+    engineering: 'Translating technical detail for non-technical audiences',
+    ClinicalIcon: RecordVoiceOverOutlinedIcon,
+    EngineeringIcon: ForumOutlinedIcon,
   },
   {
     skill: 'Precise Documentation',
-    desc: 'Clinical notes and procedure records → technical documentation and code clarity',
+    clinical: 'Clinical notes and procedure records',
+    engineering: 'Technical documentation and code clarity',
+    ClinicalIcon: DescriptionOutlinedIcon,
+    EngineeringIcon: CodeIcon,
   },
   {
     skill: 'Continuous Learning',
-    desc: 'Staying current with medical literature → keeping pace with rapidly evolving technology',
+    clinical: 'Staying current with medical literature',
+    engineering: 'Keeping pace with rapidly evolving technology',
+    ClinicalIcon: MenuBookOutlinedIcon,
+    EngineeringIcon: TrendingUpIcon,
   },
   {
     skill: 'Team Collaboration',
-    desc: 'Multi-disciplinary ward rounds → cross-functional software engineering teams',
+    clinical: 'Multi-disciplinary ward rounds',
+    engineering: 'Cross-functional software engineering teams',
+    ClinicalIcon: GroupsOutlinedIcon,
+    EngineeringIcon: MemoryOutlinedIcon,
   },
 ]
+
+// One side of a comparison row: icon + text
+function SkillSide({ Icon, text, color }: { Icon: Icon; text: string; color: string }) {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25, flex: 1, minWidth: 0 }}>
+      <Icon aria-hidden="true" sx={{ color, fontSize: '1.25rem', mt: '1px', flexShrink: 0 }} />
+      <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.55 }}>
+        {text}
+      </Typography>
+    </Box>
+  )
+}
 
 export default function DoctorCareer() {
   const [expanded, setExpanded] = useState<number | null>(null)
@@ -90,20 +156,67 @@ export default function DoctorCareer() {
             <MedicalServicesIcon color="secondary" fontSize="small" />
             Transferable Skills: Medicine → Software
           </Typography>
-          <Grid container spacing={2}>
+          {/* Column headings, shown only where the two sides sit side by side */}
+          <Box
+            aria-hidden="true"
+            sx={{
+              display: { xs: 'none', sm: 'flex' },
+              gap: 2,
+              pb: 1,
+              mb: 1,
+              borderBottom: '1px solid rgba(96,108,56,0.35)',
+              '& > *': { flex: 1 },
+            }}
+          >
+            <Typography variant="overline" color="secondary.dark" fontWeight={700}>
+              In medicine
+            </Typography>
+            <Box sx={{ flex: '0 0 24px !important' }} />
+            <Typography variant="overline" color="primary.main" fontWeight={700}>
+              In software
+            </Typography>
+          </Box>
+          <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
             {transferableSkills.map(s => (
-              <Grid item xs={12} sm={6} key={s.skill}>
-                <Box>
-                  <Typography variant="body2" fontWeight={700} color="secondary.main">
-                    {s.skill}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.5 }}>
-                    {s.desc}
-                  </Typography>
+              <Box
+                component="li"
+                key={s.skill}
+                sx={{ py: 1.75, '&:not(:last-child)': { borderBottom: '1px dashed rgba(96,108,56,0.3)' } }}
+              >
+                <Typography variant="body2" component="h4" fontWeight={700} color="text.primary" sx={{ mb: 1 }}>
+                  {s.skill}
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    alignItems: { xs: 'stretch', sm: 'flex-start' },
+                    gap: { xs: 0.75, sm: 2 },
+                  }}
+                >
+                  <SkillSide Icon={s.ClinicalIcon} text={s.clinical} color="#4C5A2D" />
+                  {/* Arrow points right beside the columns, down when they stack */}
+                  <ArrowForwardIcon
+                    aria-hidden="true"
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '1.1rem',
+                      mt: { sm: '2px' },
+                      ml: { xs: '2px', sm: 0 },
+                      flexShrink: 0,
+                      width: 24,
+                      transform: { xs: 'rotate(90deg)', sm: 'none' },
+                    }}
+                  />
+                  {/* Screen readers get the link between the two sides in words, not just the arrow */}
+                  <Box component="span" sx={visuallyHidden}>
+                    in software:
+                  </Box>
+                  <SkillSide Icon={s.EngineeringIcon} text={s.engineering} color="#1B4332" />
                 </Box>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Paper>
       </motion.div>
 

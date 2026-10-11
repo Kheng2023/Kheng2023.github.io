@@ -16,6 +16,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
+import Monogram from '../ui/Monogram'
 
 const NAV_ITEMS = [
   { label: 'About', href: '#about' },
@@ -33,6 +34,8 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
+    // The browser may restore a scrolled position on reload; check once before any scroll event
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -71,23 +74,55 @@ export default function NavBar() {
             minHeight: { xs: 60, md: 64 },
           }}
         >
-          {/* Logo / name */}
-          <Typography
-            variant="h6"
-            component="div"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          {/* Brand lockup: a real link home, so it works without JS and reads as one name to screen readers */}
+          <Box
+            component="a"
+            href="/"
+            aria-label="Yong Kheng Beh - Home"
+            onClick={(e: React.MouseEvent) => {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
             sx={{
-              fontFamily: '"Plus Jakarta Sans", sans-serif',
-              fontWeight: 800,
-              fontSize: '1.05rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1.25,
+              mr: 'auto',
               color: 'primary.main',
-              cursor: 'pointer',
-              flexGrow: 1,
-              userSelect: 'none',
+              textDecoration: 'none',
+              borderRadius: 1,
+              '&:focus-visible': { outline: '2px solid #2D6A4F', outlineOffset: 4 },
             }}
           >
-            Yong Kheng
-          </Typography>
+            <Monogram />
+            <Box sx={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
+              <Box
+                component="span"
+                sx={{
+                  fontFamily: '"Plus Jakarta Sans", sans-serif',
+                  fontWeight: 800,
+                  fontSize: '1rem',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Yong-Kheng
+              </Box>
+              {/* Phonetic guide; dropped below 640px so the bar never wraps */}
+              <Box
+                component="span"
+                sx={{
+                  fontFamily: 'ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace',
+                  fontSize: '0.72rem',
+                  color: 'text.secondary',
+                  '@media (max-width: 639.95px)': { display: 'none' },
+                }}
+              >
+                /yaw-ng kay-ng/
+              </Box>
+            </Box>
+          </Box>
 
           {/* Desktop nav */}
           {!isMobile && (
@@ -134,7 +169,7 @@ export default function NavBar() {
       >
         <Box sx={{ pt: 1 }}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1.5, py: 1 }}>
-            <IconButton onClick={() => setDrawerOpen(false)} size="small">
+            <IconButton onClick={() => setDrawerOpen(false)} size="small" aria-label="Close navigation menu">
               <CloseIcon fontSize="small" />
             </IconButton>
           </Box>
